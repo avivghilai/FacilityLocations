@@ -726,7 +726,7 @@ In a facility location game there are number of players located at different
  locations and a number of facilities needs to be located.
  Each player has a utility function based on his location and the facilities
  locations.
- A machanism recieves the players locations and decides the facilities locations
+ A mechanism recieves the players locations and decides the facilities locations
  while trying to maximise the social cost: the sum of the players utilities.
  The players can lie about their location in order to increase their utility.
  An algorithm is called thruthfull if each players can't increase his own
@@ -741,7 +741,7 @@ In a facility location game there are number of players located at different
 We consider the problem of obnoxious facility location games on the circle.
  We look at a specific case of two players and one facility, and get a randomise
 d appromixation algorithm of 
-\begin_inset Formula $\frac{1}{2}+\frac{1}{\sqrt[]{2}}$
+\begin_inset Formula $\frac{1}{2}+\frac{1}{\sqrt{2}}$
 \end_inset
 
 .
@@ -803,7 +803,11 @@ social welfare
 
 .
  Define the circle perimiter length as 1 for convinience, notice every solution
- value is at most 2.
+ value is at most 1.
+ The optimal solution for the problem is choosing the longest arc between
+ the players and locating the facility at the middle of it.
+ This mechanism is not truthfull because one player can lie about his location
+ and say his closed to the middle point, pushing it away from him.
  We look for appromixation algorithms which are thruthfull and still as
  close as possible to the optimum.
 \end_layout
@@ -812,9 +816,84 @@ social welfare
 Deterministic mechanism
 \end_layout
 
+\begin_layout Subparagraph
+Trivial approach
+\end_layout
+
 \begin_layout Standard
-A trivial mechanism would be choosing a fixed point on the circle without
- considiration of the players' locations.
+choose a fixed point on the circle without consideration of the players'
+ locations.
+ The mechanism is both truthfull and anonymous, but might be infinitly far
+ from the optimum.
+\end_layout
+
+\begin_layout Subparagraph
+Best for one player
+\end_layout
+
+\begin_layout Standard
+Locate the facility at the farest place from player number 1.
+ The mechanism is truthfull but not anonymous.
+ Each solution value is at least 
+\begin_inset Formula $0.5$
+\end_inset
+
+, and therefore we get an appromixation of 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of players (in our case 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ appromixation).
+\end_layout
+
+\begin_layout Subparagraph
+
+\emph on
+Do we have a deterministic anonymous algorithm that achieves an appromixation
+ of constant factor? or can we prove one doesn't exists?
+\end_layout
+
+\begin_layout Subsection
+Randomized mechanisms
+\end_layout
+
+\begin_layout Subparagraph
+Trivial approach
+\end_layout
+
+\begin_layout Standard
+Locate the facility at a random place on the circle.
+ The mechanism is truthfull and anonymous.
+ For each player the expected distance between him and the facility is 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.
+ Therefore the expected social welfare is 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph
+Coin flipping middle arc
+\end_layout
+
+\begin_layout Standard
+As mentioned before, the optimal solution is choosing the longest arc between
+ the players and locating the facility at its middle.
+ To make this mechanism truthfull we add the following adjustment: flip
+ a coin and choose an arc between the players randomly (either the long
+ arc or the short one), then locate the facility in that arc's middle point.
+ 
 \end_layout
 
 \end_body
