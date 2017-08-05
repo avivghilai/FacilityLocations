@@ -1,0 +1,821 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+%% AGT class -- Feldman -- TAU -- Fall 2013 %%
+
+
+
+\textwidth=6in
+\oddsidemargin=0.25in
+\evensidemargin=0.25in
+\topmargin=-0.1in
+\footskip=0.8in
+\parindent=0.0cm
+\parskip=0.3cm
+\textheight=8.00in
+
+
+\sloppy
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+oddsidemargin}{.25in}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+evensidemargin}{.25in}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+textwidth}{6in}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+topmargin}{-0.4in}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+textheight}{8.5in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\handout}[5]{ \newcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\lecture}[4]{\handout{#1}{#2}{Lecturer: #3}{Scribe: #4}{Lecture #1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{theorem}{
+\end_layout
+
+\end_inset
+
+Theorem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{corollary}[theorem]{
+\end_layout
+
+\end_inset
+
+Corollary
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{lemma}[theorem]{
+\end_layout
+
+\end_inset
+
+Lemma
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{observation}[theorem]{
+\end_layout
+
+\end_inset
+
+Observation
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{proposition}[theorem]{
+\end_layout
+
+\end_inset
+
+Proposition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{definition}[theorem]{
+\end_layout
+
+\end_inset
+
+Definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{claim}[theorem]{
+\end_layout
+
+\end_inset
+
+Claim
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{fact}[theorem]{
+\end_layout
+
+\end_inset
+
+Fact
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{assumption}[theorem]{
+\end_layout
+
+\end_inset
+
+Assumption
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{example}{
+\end_layout
+
+\end_inset
+
+Example
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\qed}{\rule{7pt}{7pt}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proof}{
+\backslash
+noindent{
+\backslash
+bf Proof:}
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proof-sketch}{
+\backslash
+noindent{
+\backslash
+bf Sketch of Proof:}
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proof-idea}{
+\backslash
+noindent{
+\backslash
+bf Proof Idea:}
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proof-of-lemma}[1]{
+\backslash
+noindent{
+\backslash
+bf Proof of Lemma #1:}
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proof-attempt}{
+\backslash
+noindent{
+\backslash
+bf Proof Attempt:}
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{proofof}[1]{
+\backslash
+noindent{
+\backslash
+bf Proof}
+\end_layout
+
+\begin_layout Plain Layout
+
+of #1:
+\backslash
+hspace*{1em}}{
+\backslash
+qed
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{remark}{
+\backslash
+noindent{
+\backslash
+bf Remark}
+\backslash
+hspace*{1em}}{
+\backslash
+bigskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%%Michal%% ==> Change the lecture number, lecture date, and Scribe name
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+lecture{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+March 15, 2017
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+Michal Feldman
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\end_inset
+
+Kineret Segal
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%%Michal%%  Name the first section.
+  You can then use more sections (and, if needed, subsections)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Abstract
+\end_layout
+
+\begin_layout Standard
+bla bla
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In a facility location game there are number of players located at different
+ locations and a number of facilities needs to be located.
+ Each player has a utility function based on his location and the facilities
+ locations.
+ A machanism recieves the players locations and decides the facilities locations
+ while trying to maximise the social cost: the sum of the players utilities.
+ The players can lie about their location in order to increase their utility.
+ An algorithm is called thruthfull if each players can't increase his own
+ utility by lying.
+ Using the Vickrey-Clarke-Groves (VCG) algorithm we get a truthfull optimal
+ algorithm by choosing the payments wisely.
+ In this problem though, we don't want to take money from people, and therefore
+ we search for truthfull appromixation algorithms.
+\end_layout
+
+\begin_layout Standard
+We consider the problem of obnoxious facility location games on the circle.
+ We look at a specific case of two players and one facility, and get a randomise
+d appromixation algorithm of 
+\begin_inset Formula $\frac{1}{2}+\frac{1}{\sqrt[]{2}}$
+\end_inset
+
+.
+ We also charactarise deterministic algorithms...
+ bla bla....
+\end_layout
+
+\begin_layout Subsection
+Previous work
+\end_layout
+
+\begin_layout Section
+Two players and one facility
+\end_layout
+
+\begin_layout Standard
+Two players are located on a circle.
+ we wish to design an algorithms that based on their said locations, decides
+ the location of a single facility such that it's distance from the players
+ is maximal.
+ Let 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ be the players locations and 
+\begin_inset Formula $d=dist(p1,p2)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $dist$
+\end_inset
+
+ is defined by the shortest path between 
+\begin_inset Formula $p1$
+\end_inset
+
+ and 
+\begin_inset Formula $p2$
+\end_inset
+
+ on the circle perimiter.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be the facility location.
+ The 
+\emph on
+social welfare
+\emph default
+ is defined as 
+\begin_inset Formula $dist(p1,d)+dist(p2,d)$
+\end_inset
+
+.
+ Define the circle perimiter length as 1 for convinience, notice every solution
+ value is at most 2.
+ We look for appromixation algorithms which are thruthfull and still as
+ close as possible to the optimum.
+\end_layout
+
+\begin_layout Subsection
+Deterministic mechanism
+\end_layout
+
+\begin_layout Standard
+A trivial mechanism would be choosing a fixed point on the circle without
+ considiration of the players' locations.
+\end_layout
+
+\end_body
+\end_document
