@@ -731,10 +731,10 @@ In a facility location game there are number of players located at different
  The players can lie about their location in order to increase their utility.
  An algorithm is called thruthfull if each players can't increase his own
  utility by lying.
- Using the Vickrey-Clarke-Groves (VCG) algorithm we get a truthfull optimal
+ Using the Vickrey-Clarke-Groves (VCG) algorithm we get a truthful optimal
  algorithm by choosing the payments wisely.
  In this problem though, we don't want to take money from people, and therefore
- we search for truthfull appromixation algorithms.
+ we search for truthful appromixation algorithms.
 \end_layout
 
 \begin_layout Standard
@@ -806,7 +806,7 @@ social welfare
  value is at most 1.
  The optimal solution for the problem is choosing the longest arc between
  the players and locating the facility at the middle of it.
- This mechanism is not truthfull because one player can lie about his location
+ This mechanism is not truthful because one player can lie about his location
  and say his closed to the middle point, pushing it away from him.
  We look for appromixation algorithms which are thruthfull and still as
  close as possible to the optimum.
@@ -823,7 +823,7 @@ Trivial approach
 \begin_layout Standard
 choose a fixed point on the circle without consideration of the players'
  locations.
- The mechanism is both truthfull and anonymous, but might be infinitly far
+ The mechanism is both truthful and anonymous, but might be infinitly far
  from the optimum.
 \end_layout
 
@@ -833,7 +833,7 @@ Best for one player
 
 \begin_layout Standard
 Locate the facility at the farest place from player number 1.
- The mechanism is truthfull but not anonymous.
+ The mechanism is truthful but not anonymous.
  Each solution value is at least 
 \begin_inset Formula $0.5$
 \end_inset
@@ -870,7 +870,7 @@ Trivial approach
 
 \begin_layout Standard
 Locate the facility at a random place on the circle.
- The mechanism is truthfull and anonymous.
+ The mechanism is truthful and anonymous.
  For each player the expected distance between him and the facility is 
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
@@ -890,10 +890,101 @@ Coin flipping middle arc
 \begin_layout Standard
 As mentioned before, the optimal solution is choosing the longest arc between
  the players and locating the facility at its middle.
- To make this mechanism truthfull we add the following adjustment: flip
- a coin and choose an arc between the players randomly (either the long
- arc or the short one), then locate the facility in that arc's middle point.
- 
+ To make this mechanism truthful we add the following adjustment: flip a
+ coin and choose an arc between the players randomly (either the long arc
+ or the short one), then locate the facility in that arc's middle point.
+ The mechanism chooses the optimal solution at probability 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+, and therefore is at leaset 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ appromixation.
+ In the case where both of the people are located at the same spot, at probabili
+ty 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ the facility would be located on their exact location and therefore we
+ get a social welfare of 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ That's why the appromixation ratio of 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ is tight.
+ The mechanism is anonymous, but we still need to prove it's truthful.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Truthfullness:
+\emph default
+ denote 
+\begin_inset Formula $d=dist(n1,n2)$
+\end_inset
+
+, 
+\begin_inset Formula $m_{1}=mid_{\rightarrow}(n1,n2)$
+\end_inset
+
+ is the middle point of the short arc, 
+\begin_inset Formula $m_{2}=mid_{\leftarrow}(n1,n2)$
+\end_inset
+
+ is the mid point of the long arc, 
+\begin_inset Formula $\epsilon\in\{-\frac{1}{2},\frac{1}{2}\}$
+\end_inset
+
+ as player 1 deviation (the published location offset that his real location).
+ For convinience 
+\begin_inset Formula $n2=0$
+\end_inset
+
+ (the topmost point on the circle) and the short arc is from 
+\begin_inset Formula $n2$
+\end_inset
+
+ to 
+\begin_inset Formula $n1$
+\end_inset
+
+ clockwise.
+ Notice that after the deviation 
+\begin_inset Formula $\hat{m_{1}}=m_{1}+\frac{\epsilon}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{m_{2}}=m_{2}-\frac{\epsilon}{2}$
+\end_inset
+
+ where 
+\begin_inset Formula $m_{1},m_{2}$
+\end_inset
+
+ are the new midpoints of the short and long arc after player 1 deviation
+ respectivly.
+ The utility of player 1 before the deviation is: 
+\begin_inset Formula $u_{1}=\frac{1}{2}\cdot\frac{d}{2}+\frac{1}{2}\cdot\frac{1-d}{2}=\frac{1}{2}$
+\end_inset
+
+.
+ After the deviation: 
+\begin_inset Formula $\hat{u_{1}}=\frac{1}{2}\cdot\frac{d+\epsilon}{2}+\frac{1}{2}\cdot\frac{1-d-\epsilon}{2}$
+\end_inset
+
+.
+ Player 1 gain is: 
+\begin_inset Formula $\hat{u_{1}}-u_{1}=\frac{d}{4}+\frac{\epsilon}{4}+\frac{1}{4}$
+\end_inset
+
+...
 \end_layout
 
 \end_body
