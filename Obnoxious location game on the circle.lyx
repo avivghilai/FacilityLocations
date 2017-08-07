@@ -168,7 +168,7 @@ textheight}{8.5in}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\handout}[5]{ \newcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
+\newcommand{\handout}[5]{ \renewcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
 \end_inset
 
 
@@ -872,12 +872,12 @@ Trivial approach
 Locate the facility at a random place on the circle.
  The mechanism is truthful and anonymous.
  For each player the expected distance between him and the facility is 
-\begin_inset Formula $\frac{1}{2}$
+\begin_inset Formula $\frac{1}{4}$
 \end_inset
 
 .
  Therefore the expected social welfare is 
-\begin_inset Formula $\frac{n}{2}$
+\begin_inset Formula $\frac{n}{4}$
 \end_inset
 
 .
