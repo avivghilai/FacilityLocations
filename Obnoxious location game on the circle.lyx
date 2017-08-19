@@ -918,73 +918,200 @@ ty
 \end_inset
 
  is tight.
- The mechanism is anonymous, but we still need to prove it's truthful.
+ The mechanism is anonymous and truthfull.
+ We won't prove it's truthfullness in this paper as we provide a better
+ appromixation algorithm and prove it to be thruthfull.
+\end_layout
+
+\begin_layout Subparagraph
+Distributed arcs middle point
+\end_layout
+
+\begin_layout Standard
+This algorithm is similar to the coin flipping middle arc mentioned before,
+ but the arcs aren't chosed uniformely.
+ instead, the probability to choose an arc depends on it's length.
+ An arc of length 
+\begin_inset Formula $d$
+\end_inset
+
+ would be chosen at probability 
+\begin_inset Formula $\frac{1}{d}$
+\end_inset
+
+, and then the facility would be located at it's middle point.
+ The algorithm is clearly anonymous, we need to prove it's SP and analyze
+ the appromixation ratio.
+ The proof for SP will be provided at the appendix.
+\end_layout
+
+\begin_layout Section
+Proofs
+\end_layout
+
+\begin_layout Subsection
+SP for distributed arcs middle point
+\end_layout
+
+\begin_layout Standard
+We now provide a proof that the algorithm is SP.
+ This means the players can't benefit from misreporting their location.
+ Let 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ be the player location (located at the bottom of the circle for convinience),
+ 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+ the opposite location of 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+, and let 
+\begin_inset Formula $p_{1},p_{2}$
+\end_inset
+
+ be the location of the players closest to the player clockwise and counter-cloc
+kwise respectively.
+ 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+ is the player's mireported location.
+\end_layout
+
+\begin_layout Subsubsection
+case 1: 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+ lies on a different arc than 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename circle_arc_outside.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ is the distance between 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+, 
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ is the distance between 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $d3$
+\end_inset
+
+ is the distance betweed 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+.
+ The utility of the player is: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}=\frac{d1}{d2}\cdot(d_{3}+d_{2}-\frac{d1}{2})+(1-\frac{d1}{d2})\cdot(d3+\frac{d2-d1}{2})=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\frac{d1}{d2}\cdot\frac{d2}{2}+d_{3}+\frac{d2-d1}{2}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=d_{3}+\frac{d2}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+ has no effect on the player's utility, and he is not motivated to lie.
+\end_layout
+
+\begin_layout Subsubsection
+case 2: 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+ lies on a different arc than 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ but on the same arc as 
+\begin_inset Formula $q_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename circle_arc_out_q0_in.png
+	scale 70
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
-\emph on
-Truthfullness:
-\emph default
- denote 
-\begin_inset Formula $d=dist(n1,n2)$
-\end_inset
-
-, 
-\begin_inset Formula $m_{1}=mid_{\rightarrow}(n1,n2)$
-\end_inset
-
- is the middle point of the short arc, 
-\begin_inset Formula $m_{2}=mid_{\leftarrow}(n1,n2)$
-\end_inset
-
- is the mid point of the long arc, 
-\begin_inset Formula $\epsilon\in\{-\frac{1}{2},\frac{1}{2}\}$
-\end_inset
-
- as player 1 deviation (the published location offset that his real location).
- For convinience 
-\begin_inset Formula $n2=0$
-\end_inset
-
- (the topmost point on the circle) and the short arc is from 
-\begin_inset Formula $n2$
-\end_inset
-
- to 
-\begin_inset Formula $n1$
-\end_inset
-
- clockwise.
- Notice that after the deviation 
-\begin_inset Formula $\hat{m_{1}}=m_{1}+\frac{\epsilon}{2}$
-\end_inset
-
- and 
-\begin_inset Formula $\hat{m_{2}}=m_{2}-\frac{\epsilon}{2}$
-\end_inset
-
- where 
-\begin_inset Formula $m_{1},m_{2}$
-\end_inset
-
- are the new midpoints of the short and long arc after player 1 deviation
- respectivly.
- The utility of player 1 before the deviation is: 
-\begin_inset Formula $u_{1}=\frac{1}{2}\cdot\frac{d}{2}+\frac{1}{2}\cdot\frac{1-d}{2}=\frac{1}{2}$
-\end_inset
-
-.
- After the deviation: 
-\begin_inset Formula $\hat{u_{1}}=\frac{1}{2}\cdot\frac{d+\epsilon}{2}+\frac{1}{2}\cdot\frac{1-d-\epsilon}{2}$
-\end_inset
-
-.
- Player 1 gain is: 
-\begin_inset Formula $\hat{u_{1}}-u_{1}=\frac{d}{4}+\frac{\epsilon}{4}+\frac{1}{4}$
-\end_inset
-
-...
 \end_layout
 
 \end_body
