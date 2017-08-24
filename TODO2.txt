@@ -1,0 +1,9 @@
+- Changed the proof as following:
+    - start by prooving that each lie must be on one of the players (including p0)
+    - explain that each player's cost is constant C
+    - show that p0 is best.
+    
+    maybe split the proof to a first part in which the idea is explained and you see the computations,
+    and the following cases would be at the appendix (just for the completeness of the proof)
+    
+verify the terminology throughout the paper (thruthfull v.s SP, score vs utility ,...)
