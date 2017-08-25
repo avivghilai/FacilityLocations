@@ -749,8 +749,64 @@ d appromixation algorithm of
  bla bla....
 \end_layout
 
-\begin_layout Section
-Previous works and our contribution
+\begin_layout Subsection
+Previous works
+\end_layout
+
+\begin_layout Standard
+While maximizing the sum of players’ utilities, if the players can be demanded
+ payments, a truthful optimal mechanism is given by the Vickrey- Clarke-Groves
+ (VCG) mechanism.
+ But sometimes it isn't possible demanding money (e.g., in organs donation
+ or in political decision making).
+ researchers tried to come up with truthful but nontrivial (nondictorial)
+ mechanisms without payments.
+ Approximation mechanism design without money was first advocated by Procaccia
+ and Tennenholts in facility location game on a real line.
+ In facility location game, each agent wants to stay as close to the facility
+ as possible, which means that the agents’ preferences are single peaked.
+ They charactrised deterministic and randomized stategy-proof algorithms
+ for the problem of one facility on the line, and showed an upper bound
+ on deteministic algorithms of 2-appromixation.
+ In obnoxious facility location game, playes prefer to be away from the
+ facility (such as a garbage dump).
+ The obnoxious facility location game with maximizing social cost objective
+ function was first investigated by Cheng et al.
+ They designed a deterministic group strategy-proof 3-approximation mechanism
+ and a randomized group strategy-proof 
+\begin_inset Formula $\frac{3}{2}$
+\end_inset
+
+-approximation mechanism on a line.
+ On a circle or a tree, they proposed a deterministic group strategyproof
+ 3-approximation mechanisms.
+ Later, Ibara et al.
+ proved that, in the line metric there does not exist strategy-proof mechanism
+ if the range of mechanism contains more than two-facility location candidates
+ and in general metric they completely characterized (group) strategy-proof
+ mechanisms with exactly two candidates in the range.
+\end_layout
+
+\begin_layout Subsection
+Our results
+\end_layout
+
+\begin_layout Standard
+We investigated the deterministic and randomized mechanisms in obnoxious
+ facility game on the circle.
+ We show that there is no deterministic 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ strategy proof mechanism with 
+\begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
+\end_inset
+
+.
+ We design a randomized strategy-proof mechanism and show that for 2 players
+ it achieves a lower bound of <TODO>.
+ We also show that as more players participate, the algorithm's approximation
+ ratio becomes worse.
 \end_layout
 
 \begin_layout Section
@@ -902,8 +958,8 @@ begin{lemma}
 
 \end_inset
 
- In this instance of the problem, wheter player-2 lies or not ̧ any detrministic
- 
+ In this instance of the problem, whether player-2 lies or not ̧ any detrministi
+c 
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
@@ -1328,7 +1384,7 @@ We now provide a proof that the algorithm is SP.
 \begin_inset Formula $p_{0}$
 \end_inset
 
- itself.
+ itself).
 \end_layout
 
 \begin_layout Standard
@@ -1352,17 +1408,20 @@ For each location on the circle
 \begin_inset Formula $p_{i}$
 \end_inset
 
-, such that player 0 utility would be bigger if he lies and say his location
- is 
+, such that if player 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ would say his location is 
 \begin_inset Formula $p_{i}$
 \end_inset
 
-than if he lies and say his location is 
+, his utility would be bigger than saying his location is 
 \begin_inset Formula $\hat{p_{0}}$
 \end_inset
 
 .
- 
+ This means the optional places for a lie are only the places of the players.
 \begin_inset ERT
 status open
 
@@ -1391,17 +1450,15 @@ begin{proof}
 
 \end_inset
 
-The meaning of the lemma is that the optional places for a lie are only
- the places of the players.
- We split the proof into cases.
+We split the proof into cases.
  in each case we look only on the arc that contains the lie 
 \begin_inset Formula $\hat{p_{0}}$
 \end_inset
 
-, and analyze the player's utility in the case that arc is chosen by the
- algorithm.
- Then we show one of the arc's end points are at least as good places to
- lie as any point on the arc itself.
+, and analyze the player's utility in the case that the arc is chosen by
+ the algorithm.
+ Then we show that one of the arc's end points are at least as good places
+ to lie as any point on the arc itself.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1708,12 +1765,13 @@ u_{0,\hat{p_{0}}=p_{0}}-C=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}-(d_{3}-\
 
 \begin_layout Standard
 We showed the only possible places for a misreported location are the players'
- location, and in each of them the value is a constant 
+ locations, and in each of them the value is a constant 
 \begin_inset Formula $C$
 \end_inset
 
 .
- We also showed the utility if the player doesn't lie is larger then 
+ We also showed that the utility if the player doesn't lie is larger than
+ 
 \begin_inset Formula $C$
 \end_inset
 
@@ -1975,17 +2033,6 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{
 \begin_layout Plain Layout
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(\frac{d_{2}}{2}+d_{1}-2d_{3})+\frac{1}{2}-\frac{d_{2}}{2}-\frac{d_{1}}{2}+d_{3}=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
 =\frac{1}{d_{2}}d_{1}^{2}-2\frac{d_{3}}{d_{2}}d_{1}+\frac{1-d_{2}}{2}+d_{3}
 \]
 
@@ -2072,17 +2119,6 @@ Now we'll solve the second case:
 \begin_inset Formula 
 \[
 u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(\frac{d_{1}}{2}-d_{3}))+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{1}{2}-(\frac{d_{2}-d_{1}}{2}-(d_{3}-d_{1})))=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{d_{1}}{d_{2}}\cdot\frac{d_{2}}{2}+\frac{1}{2}-\frac{d_{2}}{2}+\frac{3}{2}d_{1}-d_{3}=
 \]
 
 \end_inset
@@ -2204,17 +2240,6 @@ status open
 \begin_inset Formula 
 \[
 u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(d_{3}-d_{1}-(\frac{d_{2}-d_{1}}{2}))=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-=\frac{d_{1}}{d_{2}}\cdot\frac{d_{2}}{2}+d_{3}-d_{1}-\frac{d_{2}}{2}+\frac{d_{1}}{2}=
 \]
 
 \end_inset
@@ -2489,17 +2514,6 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\
 \begin_layout Plain Layout
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(d_{1}+1+\frac{d_{2}}{2}-2d_{3})+d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2}=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
 =\frac{1}{d_{2}}d_{1}^{2}+\frac{1-2d_{3}}{d_{2}}d_{1}+d_{3}-\frac{d_{2}}{2}
 \]
 
@@ -2577,7 +2591,7 @@ And therefore
 \begin_inset Formula $2(d_{3}-\frac{1}{2})<d_{1}\le2d_{3}-d_{2}$
 \end_inset
 
-: The player's utility when the chosed arc is 
+: The player's utility when the chosen arc is 
 \begin_inset Formula $(p_{1},p_{2})$
 \end_inset
 
@@ -2587,18 +2601,7 @@ And therefore
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2})=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=d_{3}-\frac{d_{2}}{2}
+u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2})=d_{3}-\frac{d_{2}}{2}
 \]
 
 \end_inset
@@ -2639,18 +2642,7 @@ The utility doesn't depend on
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{d_{1}+d_{2}}{2}-d_{3})=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=-\frac{1}{d_{2}}d_{1}^{2}+\frac{2d_{3}}{d_{2}}d_{1}-d_{3}+\frac{d_{2}}{2}
+u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{d_{1}+d_{2}}{2}-d_{3})=-\frac{1}{d_{2}}d_{1}^{2}+\frac{2d_{3}}{d_{2}}d_{1}-d_{3}+\frac{d_{2}}{2}
 \]
 
 \end_inset
@@ -2669,18 +2661,7 @@ The equasion is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}^{'}=-2\frac{1}{d_{2}}d_{1}+\frac{2d_{3}}{d_{2}}=0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-d_{1}=d_{3}
+u_{0}^{'}=-2\frac{1}{d_{2}}d_{1}+\frac{2d_{3}}{d_{2}}=0\rightarrow d_{1}=d_{3}
 \]
 
 \end_inset
