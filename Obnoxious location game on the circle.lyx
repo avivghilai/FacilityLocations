@@ -615,106 +615,56 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%%Michal%% ==> Change the lecture number, lecture date, and Scribe name
+\begin_layout Title
+Obnoxious Facility Location Game On The Circle
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Author
+Omer Kafri 
+\begin_inset Formula $\centerdot$
+\end_inset
 
+ Aviv Ghilai
 \end_layout
 
+\begin_layout Abstract
+In this paper, we investigate the obnoxious facility location game on the
+ circle.
+ First, we prove an upper bound of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $2(\sqrt{2}-1)$
 \end_inset
 
 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-lecture{
-\end_layout
-
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ on strategy-proof deterministic mechanisms for 2 players.
+ then, we design a strategy-proof randomized mechanism for 
+\begin_inset Formula $n$
 \end_inset
 
-1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}{
-\end_layout
-
-\end_inset
-
-March 15, 2017
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}{
-\end_layout
-
-\end_inset
-
-Michal Feldman
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}{
-\end_layout
-
-\end_inset
-
-Kineret Segal
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%%Michal%%  Name the first section.
-  You can then use more sections (and, if needed, subsections)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Abstract
-\end_layout
-
-\begin_layout Standard
-bla bla
+ players, and discuss its properties.
+ 
 \end_layout
 
 \begin_layout Section
@@ -723,30 +673,38 @@ Introduction
 
 \begin_layout Standard
 In a facility location game there are number of players located at different
- locations and a number of facilities needs to be located.
+ locations and a number of facilities needed to be located.
  Each player has a utility function based on his location and the facilities
  locations.
  A mechanism recieves the players locations and decides the facilities locations
- while trying to maximise the social cost: the sum of the players utilities.
+ while trying to maximize the social cost: the sum of the players utilities.
  The players can lie about their location in order to increase their utility.
- An algorithm is called thruthfull if each players can't increase his own
- utility by lying.
- Using the Vickrey-Clarke-Groves (VCG) algorithm we get a truthful optimal
- algorithm by choosing the payments wisely.
- In this problem though, we don't want to take money from people, and therefore
- we search for truthful appromixation algorithms.
+ An algorithm is called 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{Strategy-Proof}
+\end_layout
+
+\end_inset
+
+ (SP) if each player can't increase his own utility by lying.
+ 
 \end_layout
 
 \begin_layout Standard
 We consider the problem of obnoxious facility location games on the circle.
- We look at a specific case of two players and one facility, and get a randomise
-d appromixation algorithm of 
-\begin_inset Formula $2(\sqrt{2}-1)$
-\end_inset
-
-.
- We also charactarise deterministic algorithms...
- bla bla....
+ Each player wants to be as far as possible from the facility, for example
+ a garbage dump or antenna.
+ We also can't take money from the players (in real life this can be because
+ of ethical, legal or political reasons).
+ Our goal is to characterize strategy-proof deterministic and randomized
+ mechanisms and their approximation ratios.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -804,7 +762,35 @@ We investigated the deterministic and randomized mechanisms in obnoxious
 
 .
  We design a randomized strategy-proof mechanism and show that for 2 players
- it achieves a lower bound of <TODO>.
+ it achieves a lower bound of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $2(\sqrt{2}-1)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
  We also show that as more players participate, the algorithm's approximation
  ratio becomes worse.
 \end_layout
