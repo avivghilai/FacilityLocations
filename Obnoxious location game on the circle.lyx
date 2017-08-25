@@ -969,17 +969,97 @@ We now provide a proof that the algorithm is SP.
 \begin_inset Formula $p_{0}$
 \end_inset
 
-, and let 
-\begin_inset Formula $p_{1},p_{2}$
-\end_inset
-
- be the location of the players closest to the player clockwise and counter-cloc
-kwise respectively.
- 
+, 
 \begin_inset Formula $\hat{p_{0}}$
 \end_inset
 
  is the player's mireported location.
+ Let 
+\begin_inset Formula $p_{1},p_{2}$
+\end_inset
+
+ be the location of the players closest to 
+\begin_inset Formula $\hat{q_{0}}$
+\end_inset
+
+ clockwise and counter-clockwise respectively (not including 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ itself.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lemma}
+\end_layout
+
+\end_inset
+
+For each location on the circle 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+, there exists a location of a player 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+, such that player 0 utility would be bigger if he lies and say his location
+ is 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+than if he lies and say his location is 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lemma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+The meaning of the lemma is that the optional places for a lie are only
+ the places of the players.
+ We split the proof into cases.
+ in each case we look only on the arc that contains the lie 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
+
+, and analyze the player's utility in the case that arc is chosen by the
+ algorithm.
+ Then we show one of the arc's end points are at least as good places to
+ lie as any point on the arc itself.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1000,56 +1080,46 @@ case 1:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename circle_arc_outside.png
-	scale 70
+\noindent
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
 
+\begin_layout Plain Layout
+\begin_inset Formula $d_{1}=dist(p_{2},\hat{p_{0}})$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $d_{1}$
-\end_inset
-
- is the distance between 
-\begin_inset Formula $p_{2}$
-\end_inset
-
- and 
-\begin_inset Formula $\hat{p_{0}}$
-\end_inset
-
-, 
-\begin_inset Formula $d_{2}$
-\end_inset
-
- is the distance between 
-\begin_inset Formula $p_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $p_{2}$
+ , 
+\begin_inset Formula $d_{2}=dist(p_{1},p_{2})$
 \end_inset
 
 , and 
-\begin_inset Formula $d3$
-\end_inset
-
- is the distance betweed 
-\begin_inset Formula $p_{0}$
-\end_inset
-
- and 
-\begin_inset Formula $p_{1}$
+\begin_inset Formula $d3=dist(p_{0},p_{1})$
 \end_inset
 
 .
- The utility of the player is: 
+ Given the arc 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ is chosen, The utility of the player is: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 u_{0}=\frac{d1}{d2}\cdot(d_{3}+d_{2}-\frac{d1}{2})+(1-\frac{d1}{d2})\cdot(d3+\frac{d2-d1}{2})=
@@ -1076,12 +1146,100 @@ u_{0}=\frac{d1}{d2}\cdot(d_{3}+d_{2}-\frac{d1}{2})+(1-\frac{d1}{d2})\cdot(d3+\fr
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Therefore 
 \begin_inset Formula $d_{1}$
 \end_inset
 
- has no effect on the player's utility, and he is not motivated to lie.
+ has no effect on the player's utility, which means the utility would be
+ the same if the player said his location is 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The rest of the cases would be shown at the appendix to keep the flow of
+ the article.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circle_arc_outside.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+appendix
+\end_layout
+
+\begin_layout Standard
+We now show the rest of the proof of Lemma 1.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+We continue with the cases:
 \end_layout
 
 \begin_layout Subsubsection
@@ -1101,16 +1259,6 @@ case 2:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename circle_arc_out_q0_in.png
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Assume W.L.G 
 \begin_inset Formula $dist(p_{2},q_{0})<dist(p_{1},q_{0})$
 \end_inset
@@ -1120,7 +1268,7 @@ Assume W.L.G
 \end_inset
 
 .
- We'll split the proof for this case in to 2 subcases: 
+ We'll split the proof for this case into two subcases: 
 \begin_inset Formula $d_{1}\le2\cdot d_{3}$
 \end_inset
 
@@ -1133,6 +1281,26 @@ Assume W.L.G
 \end_layout
 
 \begin_layout Standard
+\noindent
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{1}{2}-(\frac{d_{2}-d_{1}}{2}-(d_{3}-d_{1})))=
@@ -1143,10 +1311,10 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-d_{3}+\frac{d_{1}}{2}-\frac{1}{2}+\frac{d_{2}}{2}-\frac{d_{1}}{2}-d_{3}+d_{1})+\frac{1}{2}-\frac{d_{2}}{2}+\frac{d_{1}}{2}-d_{3}+d_{1}=
+=\frac{d_{1}}{d_{2}}\cdot(\frac{d_{2}}{2}+d_{1}-2d_{3})+\frac{1}{2}-\frac{d_{2}}{2}-\frac{d_{1}}{2}+d_{3}=
 \]
 
 \end_inset
@@ -1154,10 +1322,10 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(\frac{d_{2}}{2}+d_{1}-2d_{3})+\frac{1}{2}-\frac{d_{2}}{2}+\frac{3}{2}d_{1}-d_{3}=
+=\frac{1}{d_{2}}d_{1}^{2}-2\frac{d_{3}}{d_{2}}d_{1}+\frac{1-d_{2}}{2}+d_{3}
 \]
 
 \end_inset
@@ -1165,11 +1333,36 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\[
-2d_{1}+\frac{d_{1}^{2}-2d_{1}d_{3}}{d_{2}}+\frac{1}{2}-\frac{d_{2}}{2}-d_{3}=
-\]
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circle_arc_out_q0_in.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1177,26 +1370,32 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(d_{3}-\frac{d_{1}}{2}))+(1-\frac{d_{
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{1}{d_{2}}d_{1}^{2}+2(1-1\frac{d_{3}}{d_{2}})d_{1}+\frac{1}{2}-\frac{d_{2}}{2}-d_{3}
-\]
+We look for a maximum for the equation.
+ The equation is a U-shape parabola, which means the maximum values are
+ at the edges.
+ Let's check the utility:
+\end_layout
 
+\begin_layout Standard
+\begin_inset Formula $u_{0,d_{1}=0}=\frac{1-d_{2}}{2}+d_{3}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-We look for a maximum for the equasion.
- The equasion is a U-shape parabola, which means the maximum values are
- at the edges: 
-\begin_inset Formula $d_{1}=0,d_{2}$
+\begin_inset Formula $u_{0,d_{1}=2d_{3}}=\frac{(2d_{3})^{2}}{d_{2}}-\frac{(2d_{3})^{2}}{d_{2}}+\frac{1-d_{2}}{2}+d_{3}=\frac{1-d_{2}}{2}+d_{3}$
 \end_inset
 
-.
- Therefore the player doesn't gain nothing from misreporting his location
- (it's the same as if he wasn't on the arc at all).
+
+\end_layout
+
+\begin_layout Standard
+Therefore if the player says his location is the same as 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, his utility would be biggest.
 \end_layout
 
 \begin_layout Standard
@@ -1212,17 +1411,6 @@ Now we'll solve the second case:
 \begin_inset Formula 
 \[
 u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(\frac{d_{1}}{2}-d_{3}))+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{1}{2}-(\frac{d_{2}-d_{1}}{2}-(d_{3}-d_{1})))=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}+d_{3}-\frac{d_{1}}{2}-\frac{1}{2}+\frac{d_{2}}{2}-\frac{d_{1}}{2}-d_{3}+d_{1})+\frac{1}{2}-\frac{d_{2}}{2}+\frac{d_{1}}{2}-d_{3}+d_{1}=
 \]
 
 \end_inset
@@ -1253,12 +1441,20 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(\frac{d_{1}}{2}-d_{3}))+(1-\frac{d_{
 \end_layout
 
 \begin_layout Standard
-And the maximum is when 
+This is a linear equasion in 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+, which means it's largest value is when 
 \begin_inset Formula $d_{1}=d_{2}$
 \end_inset
 
 .
- Once again, the player can't improve his utility by lying.
+ The player's best lie is saying his location is the same as 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1278,17 +1474,20 @@ case 3:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename circle_arc_inside.png
-	scale 70
-
+We change notations and now 
+\begin_inset Formula $p_{1}$
 \end_inset
 
+ is the closest player to 
+\begin_inset Formula $\hat{p_{0}}$
+\end_inset
 
-\end_layout
+ counter-clockwise, and 
+\begin_inset Formula $p_{2}$
+\end_inset
 
-\begin_layout Standard
-Assume W.L.G that 
+ clockwise.
+ Assume W.L.G that 
 \begin_inset Formula $d_{3}>\frac{d_{2}}{2}$
 \end_inset
 
@@ -1317,6 +1516,26 @@ Assume W.L.G that
 \end_layout
 
 \begin_layout Standard
+\noindent
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $d_{1}\leq2d_{3}-d_{2}$
 \end_inset
 
@@ -1331,7 +1550,7 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cd
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 =\frac{d_{1}}{d_{2}}\cdot\frac{d_{2}}{2}+d_{3}-d_{1}-\frac{d_{2}}{2}+\frac{d_{1}}{2}=
@@ -1342,11 +1561,59 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cd
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 =d_{3}-\frac{d_{2}}{2}
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The utility doesn't depend on 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ is one of the favorable places.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circle_arc_inside.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1374,17 +1641,6 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cd
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(2d_{3}-d_{1}-\frac{d_{2}}{2})+\frac{d_{1}}{2}+\frac{d_{2}}{2}-d_{3}=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
 =-\frac{1}{d_{2}}d_{1}^{2}+\frac{2d_{3}}{d_{2}}d_{1}+\frac{d_{2}}{2}-d_{3}
 \]
 
@@ -1398,8 +1654,7 @@ The equasion is
 \begin_inset Formula $\cap$
 \end_inset
 
--shaped parabola and we look for the maximum.
- 
+-shaped parabola, we look for the maximum:
 \end_layout
 
 \begin_layout Standard
@@ -1425,32 +1680,23 @@ d_{1}=d_{3}
 \end_layout
 
 \begin_layout Standard
-The function value at the point 
+When 
 \begin_inset Formula $d_{1}=d_{3}$
 \end_inset
 
- (which means the player told the truth) is:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
--\frac{1}{d_{2}}d_{3}^{2}+\frac{2d_{3}^{2}}{d_{2}}+\frac{d_{2}}{2}-d_{3}=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}
-\]
-
+, the player's location is the true location: 
+\begin_inset Formula $p_{0}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Let's substract the previous value from this one:
+.
+ Let's see what is the utility in that place (It would help us at the second
+ part of the proof).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}-(d_{3}-\frac{d_{2}}{2})=
+u_{0,d_{1}=d_{3}}=-\frac{1}{d_{2}}d_{3}^{2}+\frac{2d_{3}^{2}}{d_{2}}+\frac{d_{2}}{2}-d_{3}
 \]
 
 \end_inset
@@ -1461,16 +1707,12 @@ Let's substract the previous value from this one:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{d_{3}^{2}-2d_{3}+d_{2}^{2}}{d_{2}}=\frac{(d_{3}-d_{2})^{2}}{d_{2}}\ge0
+=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}
 \]
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Which means it is never advised to lie (in this case).
 \end_layout
 
 \begin_layout Subsubsection
@@ -1524,16 +1766,26 @@ is on the same arc as
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename circle_arc_inside_q0_inside.png
-	scale 70
+\noindent
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 We split the proof of this case into three sub cases: 
 \begin_inset Formula $d_{1}\le2(d_{3}-\frac{1}{2})$
 \end_inset
@@ -1549,16 +1801,20 @@ We split the proof of this case into three sub cases:
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 1.
  
 \begin_inset Formula $d_{1}\le2(d_{3}-\frac{1}{2})$
 \end_inset
 
-: The player utility is:
+: The player's utility when the chosed arc is 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ is:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2})=
@@ -1569,10 +1825,108 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+=\frac{d_{1}}{d_{2}}\cdot(d_{1}+1+\frac{d_{2}}{2}-2d_{3})+d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+=\frac{1}{d_{2}}d_{1}^{2}+\frac{1-2d_{3}}{d_{2}}d_{1}+d_{3}-\frac{d_{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename circle_arc_inside_q0_inside.png
+	scale 50
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The maximum is on the edges:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{0,d_{1}=0}=d_{3}-\frac{d_{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{0,d_{1}=2(d_{3}-\frac{1}{2})}=\frac{(2d_{3}-1)^{2}}{d_{2}}-\frac{(2d_{3}-1)^{2}}{d_{2}}+d_{3}-\frac{d_{2}}{2}=d_{3}-\frac{d_{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And therefore 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ is one of the favorable locations.
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $2(d_{3}-\frac{1}{2})<d_{1}\le2d_{3}-d_{2}$
+\end_inset
+
+: The player's utility when the chosed arc is 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ is:
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2}-d_{3}+\frac{d_{1}}{2}+\frac{d_{2}}{2})+d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2}=
+u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2})=
 \]
 
 \end_inset
@@ -1583,7 +1937,7 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2}-d_{3}+\frac{d_{1}}{2}+\fr
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{d_{1}}{d_{2}}\cdot(d_{1}+1+\frac{d_{2}}{2}-2d_{3})+d_{3}-\frac{d_{1}}{2}-\frac{d_{2}}{2}
+=d_{3}-\frac{d_{2}}{2}
 \]
 
 \end_inset
@@ -1592,14 +1946,294 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(1-d_{3}+\frac{d_{1}}{2}-d_{3}+\frac{d_{1}}{2}+\fr
 \end_layout
 
 \begin_layout Standard
-sdawd
+The utility doesn't depend on 
+\begin_inset Formula $d_{1}$
+\end_inset
+
+.
+ We've seen that 
+\begin_inset Formula $u_{0,d_{1}=2(d_{3}-\frac{1}{2})}=u_{0,d_{1}=0}$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ is still one of the favorable locations.
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $d_{1}>2d_{3}-d_{2}$
+\end_inset
+
+: The player's utility when the chosed arc is 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ is:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u_{0}=\frac{d_{1}}{d_{2}}\cdot()+(1-\frac{d_{1}}{d_{2}})\cdot()
+u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cdot(\frac{d_{1}+d_{2}}{2}-d_{3})=
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=-\frac{1}{d_{2}}d_{1}^{2}+\frac{2d_{3}}{d_{2}}d_{1}-d_{3}+\frac{d_{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The equasion is 
+\begin_inset Formula $\cap$
+\end_inset
+
+-shaped parabola, we look for the maximum:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0}^{'}=-2\frac{1}{d_{2}}d_{1}+\frac{2d_{3}}{d_{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d_{1}=d_{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again, the best location in this case is 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+.
+ The value of the function at this location is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0,d_{1}=d_{3}}=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{theorem}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ is the best location for the player to report, meaning the algorithm is
+ 
+\emph on
+SP
+\emph default
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We showed that the only possible places for a lie are the players' locations.
+ Now we need to show that the best location of all is 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+.
+ Notice that if the player lies and says his location is 
+\begin_inset Formula $p_{i},\,i\ne0$
+\end_inset
+
+, then it is the same as if he didn't participate at all.
+ That's because the algorithm doesn't care if more than one person is in
+ the same spot, because the 
+\emph on
+Social Welfare
+\emph default
+ function is based only on the minimum distance, and not the sum of distances,
+ for example.
+ Therefore, there exists some constant 
+\begin_inset Formula $C=u_{0,\hat{p_{0}}=p_{i}}$
+\end_inset
+
+ for every 
+\begin_inset Formula $i\ne0$
+\end_inset
+
+.
+ We just need to show that 
+\begin_inset Formula $u_{0,\hat{p_{0}}=p_{0}}>C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Notice case 3 and 4 are the only two cases where the player could say his
+ location is his real location.
+ In those cases, if the player said his location is 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, his utility would be 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ using the notations of those cases and assuming the arc 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ was chosen, his utility would be 
+\begin_inset Formula $d_{3}-\frac{d_{2}}{2}$
+\end_inset
+
+.
+ In addition, if the player hadn't lie his utility would be 
+\begin_inset Formula $\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}$
+\end_inset
+
+.
+ Let's see the difference between these values:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0,\hat{p_{0}}=p_{0}}-C=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}-(d_{3}-\frac{d_{2}}{2})=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{d_{3}^{2}-2d_{3}+d_{2}^{2}}{d_{2}}=\frac{(d_{3}-d_{2})^{2}}{d_{2}}\ge0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We showed the only possible places for a misreported location are the players'
+ location, and in each of them the value is a constant 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ We also showed the utility if the player doesn't lie is larger then 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Therefore, the algorithm is 
+\emph on
+SP
+\emph default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
 
 \end_inset
 
