@@ -168,7 +168,7 @@ textheight}{8.5in}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\handout}[5]{ \renewcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
+\newcommand{\handout}[5]{ \newcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
 \end_inset
 
 
@@ -749,208 +749,476 @@ d appromixation algorithm of
  bla bla....
 \end_layout
 
-\begin_layout Subsection
-Previous work
+\begin_layout Section
+Previous works and our contribution
 \end_layout
 
 \begin_layout Section
-Two players and one facility
+Settings &premiliaries
+\end_layout
+
+\begin_layout Section
+Deterministic mechanisms
+\end_layout
+
+\begin_layout Subsection
+Trivial approch
+\end_layout
+
+\begin_layout Subsection
+Non-anonymous mechanism
+\end_layout
+
+\begin_layout Subsection
+Upper bound for two players
 \end_layout
 
 \begin_layout Standard
-Two players are located on a circle.
- we wish to design an algorithms that based on their said locations, decides
- the location of a single facility such that it's distance from the players
- is maximal.
- Let 
-\begin_inset Formula $p_{1}$
+As we are working on a maximization problem ̧ a lower bound 
+\begin_inset Formula $m$
 \end_inset
 
-, 
-\begin_inset Formula $p_{2}$
+ means that there is no 
+\begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
- be the players locations and 
-\begin_inset Formula $d=dist(p1,p2)$
+ algorithm with 
+\begin_inset Formula $m\lneq\alpha$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{theorem}
+\end_layout
+
+\end_inset
+
+ In the settings of two players and using the minimal distance as a social
+ welfare function ̧ there is no deterministic 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ strategy proof algorithm with 
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+ Lets fix player-1 at some point on the circle ̧ and let player-2 be on
+ the circle such that the distance between them is 
+\begin_inset Formula $d=\frac{3-\sqrt{2}}{7}$
+\end_inset
+
+.
+ We will prove that player-2 can increase his utility by telling the mechanism
+ that he is located at a distance of 
+\begin_inset Formula $2d$
+\end_inset
+
+ to the same direction from player-1, therfore player-2 is motivited to
+ lie.
+ we will call the scenerio in which both players tell the truth 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ and the scenerio where player-1 tells the truth and player-2 lies that
+ he is in distance of 
+\begin_inset Formula $2d$
+\end_inset
+
  
-\begin_inset Formula $dist$
-\end_inset
+\begin_inset ERT
+status open
 
- is defined by the shortest path between 
-\begin_inset Formula $p1$
-\end_inset
+\begin_layout Plain Layout
 
- and 
-\begin_inset Formula $p2$
-\end_inset
 
- on the circle perimiter.
- Let 
-\begin_inset Formula $f$
-\end_inset
-
- be the facility location.
- The 
-\emph on
-social welfare
-\emph default
- is defined as 
-\begin_inset Formula $dist(p1,d)+dist(p2,d)$
-\end_inset
-
-.
- Define the circle perimiter length as 1 for convinience, notice every solution
- value is at most 1.
- The optimal solution for the problem is choosing the longest arc between
- the players and locating the facility at the middle of it.
- This mechanism is not truthful because one player can lie about his location
- and say his closed to the middle point, pushing it away from him.
- We look for appromixation algorithms which are thruthfull and still as
- close as possible to the optimum.
+\backslash
+emph{lie scenerio}
 \end_layout
 
-\begin_layout Subsection
-Deterministic mechanism
-\end_layout
-
-\begin_layout Subparagraph
-Trivial approach
-\end_layout
-
-\begin_layout Standard
-choose a fixed point on the circle without consideration of the players'
- locations.
- The mechanism is both truthful and anonymous, but might be infinitly far
- from the optimum.
-\end_layout
-
-\begin_layout Subparagraph
-Best for one player
-\end_layout
-
-\begin_layout Standard
-Locate the facility at the farest place from player number 1.
- The mechanism is truthful but not anonymous.
- Each solution value is at least 
-\begin_inset Formula $0.5$
-\end_inset
-
-, and therefore we get an appromixation of 
-\begin_inset Formula $\frac{1}{n}$
-\end_inset
-
- where 
-\begin_inset Formula $n$
-\end_inset
-
- is the number of players (in our case 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
- appromixation).
-\end_layout
-
-\begin_layout Subparagraph
-
-\emph on
-Do we have a deterministic anonymous algorithm that achieves an appromixation
- of constant factor? or can we prove one doesn't exists?
-\end_layout
-
-\begin_layout Subsection
-Randomized mechanisms
-\end_layout
-
-\begin_layout Subparagraph
-Trivial approach
-\end_layout
-
-\begin_layout Standard
-Locate the facility at a random place on the circle.
- The mechanism is truthful and anonymous.
- For each player the expected distance between him and the facility is 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
-.
- Therefore the expected social welfare is 
-\begin_inset Formula $\frac{n}{2}$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Subparagraph
-Coin flipping middle arc
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lemma}
+\end_layout
+
+\end_inset
+
+ In this instance of the problem, wheter player-2 lies or not ̧ any detrministic
+ 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ mechanism must place the antenna on the long arc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lemma}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-As mentioned before, the optimal solution is choosing the longest arc between
- the players and locating the facility at its middle.
- To make this mechanism truthful we add the following adjustment: flip a
- coin and choose an arc between the players randomly (either the long arc
- or the short one), then locate the facility in that arc's middle point.
- The mechanism chooses the optimal solution at probability 
-\begin_inset Formula $\frac{1}{2}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof-of-lemma}
+\end_layout
+
 \end_inset
 
-, and therefore is at leaset 
-\begin_inset Formula $\frac{1}{2}$
+2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Case1:}
+\end_layout
+
 \end_inset
 
- appromixation.
- In the case where both of the people are located at the same spot, at probabili
-ty 
-\begin_inset Formula $\frac{1}{2}$
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
 \end_inset
 
- the facility would be located on their exact location and therefore we
- get a social welfare of 
-\begin_inset Formula $0$
+, optimal solution will be of course to put the antenna at the middle of
+ the long arc ̧ therefore it will have a social welfare of 
+\begin_inset Formula $\frac{1-d}{2}=\frac{4+\sqrt{2}}{14}$
 \end_inset
 
 .
- That's why the appromixation ratio of 
-\begin_inset Formula $\frac{1}{2}$
+ Notice that the optimal location on the short arc is at the middle of it,
+ with a social welfare of 
+\begin_inset Formula $\frac{d}{2}$
 \end_inset
 
- is tight.
- The mechanism is anonymous and truthfull.
- We won't prove it's truthfullness in this paper as we provide a better
- appromixation algorithm and prove it to be thruthfull.
-\end_layout
+.
+ If
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
 
-\begin_layout Subparagraph
-Distributed arcs middle point
+ it holds that 
+\begin_inset Formula $\alpha\frac{1-d}{2}\gneq\frac{d}{2}$
+\end_inset
+
+.
+ It follows that any deterministic 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ algorithem must place the antenna on the long arc.
 \end_layout
 
 \begin_layout Standard
-This algorithm is similar to the coin flipping middle arc mentioned before,
- but the arcs aren't chosed uniformely.
- instead, the probability to choose an arc depends on it's length.
- An arc of length 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Case2:}
+\end_layout
+
+\end_inset
+
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, the optimal location for the antenna will again be on the middle of the
+ long arc and have a social welfare of 
+\begin_inset Formula $\frac{1-2d}{2}=\frac{1+2\sqrt{2}}{14}$
+\end_inset
+
+.
+ The optimal social welfare on the short arc is 
 \begin_inset Formula $d$
 \end_inset
 
- would be chosen at probability 
-\begin_inset Formula $\frac{1}{d}$
+.
+ If
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
 \end_inset
 
-, and then the facility would be located at it's middle point.
- The algorithm is clearly anonymous, we need to prove it's SP and analyze
- the appromixation ratio.
- The proof for SP will be provided at the appendix.
+ it holds that 
+\begin_inset Formula $\alpha\frac{1-2d}{2}\gneq d$
+\end_inset
+
+ .
+ Again, it follows that any deterministic 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ algorithem must place the antenna on the long arc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof-of-lemma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will now make some calculations and see that the upper bound on the utility
+ of player-2 in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ is lower than the lower bound on his utility in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, therfore he is motivated to lie.
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ any deterministic 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+ algorithem must place the antenna on the long arc, and not farther than
+ 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ from it's middle because the optimal location is the middle and 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ is the difference between the optimal social welfare and the minimal social
+ welfare.
+ The best location player-2 can hope for is the one closest to it's oposite
+ location, that is the point at distance 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ from the middle of the long arc which is closest to the opposite location
+ of player-2.
+ This means that the utility of player-2 is at most 
+\begin_inset Formula $(1-\frac{\alpha}{2})(1-d)$
+\end_inset
+
+.
+ Now for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, any deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithem must place the antenna on the long arc, and not farther than
+ 
+\begin_inset Formula $\frac{(1-\alpha)(1-2d)}{2}$
+\end_inset
+
+ from it's middle.
+ Notice that the segment of possible locations for the antenna is between
+ the opposite location of player-2 and it's false location.
+ Therfore the utility of player-2 is at least 
+\begin_inset Formula $d+\frac{1-2d}{2}-\frac{(1-\alpha)(1-2d)}{2}=\frac{\alpha}{2}-\alpha d+d$
+\end_inset
+
+ (the distance between player-2 and his false location + the distance between
+ the false location and the optimal antenna location - the maxmial distance
+ of the antenna from the optimal location).
+ If 
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+ then 
+\begin_inset Formula $\frac{\alpha}{2}-\alpha d+d>(1-\frac{\alpha}{2})(1-d)$
+\end_inset
+
+ which means player-2 is motivated to lie and the algorithem is not strategy
+ proof.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Question}
+\end_layout
+
+\end_inset
+
+ Is there a deterministic anonymous algorithm that achieves an approximation
+ of constant factor? or can we prove one does not exist?
 \end_layout
 
 \begin_layout Section
-Proofs
+Randomized mechanisms
 \end_layout
 
 \begin_layout Subsection
-SP for distributed arcs middle point
+Coin flipping/best for one player
+\end_layout
+
+\begin_layout Subsection
+Weights mechanism
+\end_layout
+
+\begin_layout Subsection
+Weights mechanism approximation factor
+\end_layout
+
+\begin_layout Subsection
+Weights mechanism is startegy proof
 \end_layout
 
 \begin_layout Standard
@@ -1220,8 +1488,381 @@ end{proof}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{theorem}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ is the best location for the player to report, meaning the algorithm is
+ 
+\emph on
+SP
+\emph default
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We showed that the only possible places for a lie are the players' locations.
+ Now we need to show that the best location of all is 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+.
+ Notice that if the player lies and says his location is 
+\begin_inset Formula $p_{i},\,i\ne0$
+\end_inset
+
+, then it is the same as if he didn't participate at all.
+ That's because the algorithm doesn't care if more than one person is in
+ the same spot, because the 
+\emph on
+Social Welfare
+\emph default
+ function is based only on the minimum distance, and not the sum of distances,
+ for example.
+ Therefore, there exists some constant 
+\begin_inset Formula $C=u_{0,\hat{p_{0}}=p_{i}}$
+\end_inset
+
+ for every 
+\begin_inset Formula $i\ne0$
+\end_inset
+
+.
+ We just need to show that 
+\begin_inset Formula $u_{0,\hat{p_{0}}=p_{0}}>C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Notice case 3 and 4 are the only two cases where the player could say his
+ location is his real location.
+ In those cases, if the player said his location is 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, his utility would be 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ using the notations of those cases and assuming the arc 
+\begin_inset Formula $(p_{1},p_{2})$
+\end_inset
+
+ was chosen, his utility would be 
+\begin_inset Formula $d_{3}-\frac{d_{2}}{2}$
+\end_inset
+
+.
+ In addition, if the player hadn't lie his utility would be 
+\begin_inset Formula $\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}$
+\end_inset
+
+.
+ Let's see the difference between these values:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{0,\hat{p_{0}}=p_{0}}-C=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}-(d_{3}-\frac{d_{2}}{2})=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{d_{3}^{2}-2d_{3}+d_{2}^{2}}{d_{2}}=\frac{(d_{3}-d_{2})^{2}}{d_{2}}\ge0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We showed the only possible places for a misreported location are the players'
+ location, and in each of them the value is a constant 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ We also showed the utility if the player doesn't lie is larger then 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Therefore, the algorithm is 
+\emph on
+SP
+\emph default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-appendix
+Summary
+\end_layout
+
+\begin_layout Section
+Two players and one facility
+\end_layout
+
+\begin_layout Standard
+Two players are located on a circle.
+ we wish to design an algorithms that based on their said locations, decides
+ the location of a single facility such that it's distance from the players
+ is maximal.
+ Let 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ be the players locations and 
+\begin_inset Formula $d=dist(p1,p2)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $dist$
+\end_inset
+
+ is defined by the shortest path between 
+\begin_inset Formula $p1$
+\end_inset
+
+ and 
+\begin_inset Formula $p2$
+\end_inset
+
+ on the circle perimiter.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be the facility location.
+ The 
+\emph on
+social welfare
+\emph default
+ is defined as 
+\begin_inset Formula $dist(p1,d)+dist(p2,d)$
+\end_inset
+
+.
+ Define the circle perimiter length as 1 for convinience, notice every solution
+ value is at most 1.
+ The optimal solution for the problem is choosing the longest arc between
+ the players and locating the facility at the middle of it.
+ This mechanism is not truthful because one player can lie about his location
+ and say his closed to the middle point, pushing it away from him.
+ We look for appromixation algorithms which are thruthfull and still as
+ close as possible to the optimum.
+\end_layout
+
+\begin_layout Subsection
+Deterministic mechanism
+\end_layout
+
+\begin_layout Subparagraph
+Trivial approach
+\end_layout
+
+\begin_layout Standard
+choose a fixed point on the circle without consideration of the players'
+ locations.
+ The mechanism is both truthful and anonymous, but might be infinitly far
+ from the optimum.
+\end_layout
+
+\begin_layout Subparagraph
+Best for one player
+\end_layout
+
+\begin_layout Standard
+Locate the facility at the farest place from player number 1.
+ The mechanism is truthful but not anonymous.
+ Each solution value is at least 
+\begin_inset Formula $0.5$
+\end_inset
+
+, and therefore we get an appromixation of 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of players (in our case 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ appromixation).
+\end_layout
+
+\begin_layout Subparagraph
+
+\emph on
+Do we have a deterministic anonymous algorithm that achieves an appromixation
+ of constant factor? or can we prove one doesn't exists?
+\end_layout
+
+\begin_layout Subsection
+Randomized mechanisms
+\end_layout
+
+\begin_layout Subparagraph
+Trivial approach
+\end_layout
+
+\begin_layout Standard
+Locate the facility at a random place on the circle.
+ The mechanism is truthful and anonymous.
+ For each player the expected distance between him and the facility is 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.
+ Therefore the expected social welfare is 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph
+Coin flipping middle arc
+\end_layout
+
+\begin_layout Standard
+As mentioned before, the optimal solution is choosing the longest arc between
+ the players and locating the facility at its middle.
+ To make this mechanism truthful we add the following adjustment: flip a
+ coin and choose an arc between the players randomly (either the long arc
+ or the short one), then locate the facility in that arc's middle point.
+ The mechanism chooses the optimal solution at probability 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+, and therefore is at leaset 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ appromixation.
+ In the case where both of the people are located at the same spot, at probabili
+ty 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ the facility would be located on their exact location and therefore we
+ get a social welfare of 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ That's why the appromixation ratio of 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ is tight.
+ The mechanism is anonymous and truthfull.
+ We won't prove it's truthfullness in this paper as we provide a better
+ appromixation algorithm and prove it to be thruthfull.
+\end_layout
+
+\begin_layout Subparagraph
+Distributed arcs middle point
+\end_layout
+
+\begin_layout Standard
+This algorithm is similar to the coin flipping middle arc mentioned before,
+ but the arcs aren't chosed uniformely.
+ instead, the probability to choose an arc depends on it's length.
+ An arc of length 
+\begin_inset Formula $d$
+\end_inset
+
+ would be chosen at probability 
+\begin_inset Formula $\frac{1}{d}$
+\end_inset
+
+, and then the facility would be located at it's middle point.
+ The algorithm is clearly anonymous, we need to prove it's SP and analyze
+ the appromixation ratio.
+ The proof for SP will be provided at the appendix.
+\end_layout
+
+\begin_layout Section
+Appendix
 \end_layout
 
 \begin_layout Standard
@@ -1239,7 +1880,7 @@ begin{proof}
 
 \end_inset
 
-We continue with the cases:
+ We continue with the cases:
 \end_layout
 
 \begin_layout Subsubsection
@@ -2048,598 +2689,6 @@ u_{0,d_{1}=d_{3}}=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{proof}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{theorem}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $p_{0}$
-\end_inset
-
- is the best location for the player to report, meaning the algorithm is
- 
-\emph on
-SP
-\emph default
-.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{theorem}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{proof}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We showed that the only possible places for a lie are the players' locations.
- Now we need to show that the best location of all is 
-\begin_inset Formula $p_{0}$
-\end_inset
-
-.
- Notice that if the player lies and says his location is 
-\begin_inset Formula $p_{i},\,i\ne0$
-\end_inset
-
-, then it is the same as if he didn't participate at all.
- That's because the algorithm doesn't care if more than one person is in
- the same spot, because the 
-\emph on
-Social Welfare
-\emph default
- function is based only on the minimum distance, and not the sum of distances,
- for example.
- Therefore, there exists some constant 
-\begin_inset Formula $C=u_{0,\hat{p_{0}}=p_{i}}$
-\end_inset
-
- for every 
-\begin_inset Formula $i\ne0$
-\end_inset
-
-.
- We just need to show that 
-\begin_inset Formula $u_{0,\hat{p_{0}}=p_{0}}>C$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Notice case 3 and 4 are the only two cases where the player could say his
- location is his real location.
- In those cases, if the player said his location is 
-\begin_inset Formula $p_{1}$
-\end_inset
-
- or 
-\begin_inset Formula $p_{2}$
-\end_inset
-
-, his utility would be 
-\begin_inset Formula $C$
-\end_inset
-
-.
- using the notations of those cases and assuming the arc 
-\begin_inset Formula $(p_{1},p_{2})$
-\end_inset
-
- was chosen, his utility would be 
-\begin_inset Formula $d_{3}-\frac{d_{2}}{2}$
-\end_inset
-
-.
- In addition, if the player hadn't lie his utility would be 
-\begin_inset Formula $\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}$
-\end_inset
-
-.
- Let's see the difference between these values:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-u_{0,\hat{p_{0}}=p_{0}}-C=\frac{d_{3}^{2}}{d_{2}}-d_{3}+\frac{d_{2}}{2}-(d_{3}-\frac{d_{2}}{2})=
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{d_{3}^{2}-2d_{3}+d_{2}^{2}}{d_{2}}=\frac{(d_{3}-d_{2})^{2}}{d_{2}}\ge0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We showed the only possible places for a misreported location are the players'
- location, and in each of them the value is a constant 
-\begin_inset Formula $C$
-\end_inset
-
-.
- We also showed the utility if the player doesn't lie is larger then 
-\begin_inset Formula $C$
-\end_inset
-
-.
- Therefore, the algorithm is 
-\emph on
-SP
-\emph default
-.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{proof}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Upperbound for deterministic mechnisms
-\end_layout
-
-\begin_layout Standard
-As we are working on a maximization problem ̧ a lower bound 
-\begin_inset Formula $m$
-\end_inset
-
- means that there is no 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- algorithm with 
-\begin_inset Formula $m\lneq\alpha$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{theorem}
-\end_layout
-
-\end_inset
-
- In the settings of two players and using the minimal distance as a social
- welfare function ̧ there is no deterministic 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- strategy proof algorithm with 
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
-\end_inset
-
-.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{theorem}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{proof}
-\end_layout
-
-\end_inset
-
- Lets fix player number 1 at some point on the circle ̧ and let player 2
- be on the circle such that the distance between them is 
-\begin_inset Formula $d=\frac{3-\sqrt{2}}{7}$
-\end_inset
-
-.
- We will prove that player 2 can increase his utility by telling the mechnism
- that he is located at a distance of 
-\begin_inset Formula $2d$
-\end_inset
-
- to the same direction from player 1, therfore player 2 is motivited to
- lie.
- we will call the scenerio in which both players tell the truth 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{truth scenerio}
-\end_layout
-
-\end_inset
-
- and the scenerio where player 1 tells the truth and player 2 lies that
- he is in distance of 
-\begin_inset Formula $2d$
-\end_inset
-
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{lie scenerio}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{lemma}
-\end_layout
-
-\end_inset
-
- In this instance of the problem, wheter player 2 lies or not ̧ any detrministic
- 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- mechanism must place the antenna on the long arc.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{lemma}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{proof-of-lemma}
-\end_layout
-
-\end_inset
-
-2 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Case1:}
-\end_layout
-
-\end_inset
-
- In the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{truth scenerio}
-\end_layout
-
-\end_inset
-
-, optimal solution will be of course to put the antenna at the middle of
- the long arc ̧ therefore it will have a social welfare of 
-\begin_inset Formula $\frac{1-d}{2}=\frac{4+\sqrt{2}}{14}$
-\end_inset
-
-.
- Notice that the optimal location on the short arc is at the middle of it,
- with a social welfare of 
-\begin_inset Formula $\frac{d}{2}$
-\end_inset
-
-.
- If
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
-\end_inset
-
- it holds that 
-\begin_inset Formula $\alpha\frac{1-d}{2}\gneq\frac{d}{2}$
-\end_inset
-
-.
- It follows that any deterministic 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- algorithem must place the antenna on the long arc.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Case2:}
-\end_layout
-
-\end_inset
-
- In the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{lie scenerio}
-\end_layout
-
-\end_inset
-
-, the optimal location for the antenna will again be on the middle of the
- long arc and have a social welfare of 
-\begin_inset Formula $\frac{1-2d}{2}=\frac{1+2\sqrt{2}}{14}$
-\end_inset
-
-.
- The optimal social welfare on the short arc is 
-\begin_inset Formula $d$
-\end_inset
-
-.
- If
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
-\end_inset
-
- it holds that 
-\begin_inset Formula $\alpha\frac{1-2d}{2}\gneq d$
-\end_inset
-
- .
- Again, it follows that any deterministic 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- algorithem must place the antenna on the long arc.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{proof-of-lemma}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We will now make some calculations and see that the upper bound on the utility
- of player 2 in the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{truth scenerio}
-\end_layout
-
-\end_inset
-
- is lower than the lower bound on his utility in the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{lie scenerio}
-\end_layout
-
-\end_inset
-
-, therfore he is motivated to lie.
- In the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{truth scenerio}
-\end_layout
-
-\end_inset
-
- any deterministic 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- algorithem must place the antenna on the long arc, and not farther than
- 
-\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
-\end_inset
-
- from it's middle because the optimal location is the middle and 
-\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
-\end_inset
-
- is the difference between the optimal social welfare and the minimal social
- welfare.
- The best location player 2 can hope for is the one closest to it's oposite
- location, that is the point at distance 
-\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
-\end_inset
-
- from the middle of the long arc which is closest to the opposite location
- of player 2.
- This means that the utility of player 2 is at most 
-\begin_inset Formula $(1-\frac{\alpha}{2})(1-d)$
-\end_inset
-
-.
- Now for the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-emph{lie scenerio}
-\end_layout
-
-\end_inset
-
-, any deterministic 
-\begin_inset Formula $\alpha-\text{optimization}$
-\end_inset
-
- algorithem must place the antenna on the long arc, and not farther than
- 
-\begin_inset Formula $\frac{(1-\alpha)(1-2d)}{2}$
-\end_inset
-
- from it's middle.
- Notice that the segment of possible locations for the antenna is between
- the opposite location of player 2 and it's false location.
- Therfore the utility of player 2 is at least 
-\begin_inset Formula $d+\frac{1-2d}{2}-\frac{(1-\alpha)(1-2d)}{2}=\frac{\alpha}{2}-\alpha d+d$
-\end_inset
-
- (the distance between player 2 and his false location + the distance between
- the false location and the optimal antenna location - the maxmial distance
- of the antenna from the optimal location).
- If
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
-\end_inset
-
- then 
-\begin_inset Formula $\frac{\alpha}{2}-\alpha d+d>(1-\frac{\alpha}{2})(1-d)$
-\end_inset
-
- which means player 2 is motivated to lie and the algorithem is not strategy
- proof.
- 
 \begin_inset ERT
 status open
 
