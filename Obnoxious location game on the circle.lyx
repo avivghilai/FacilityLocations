@@ -741,7 +741,7 @@ In a facility location game there are number of players located at different
 We consider the problem of obnoxious facility location games on the circle.
  We look at a specific case of two players and one facility, and get a randomise
 d appromixation algorithm of 
-\begin_inset Formula $\frac{1}{2}+\frac{1}{\sqrt{2}}$
+\begin_inset Formula $2(\sqrt{2}-1)$
 \end_inset
 
 .
@@ -754,7 +754,7 @@ Previous works and our contribution
 \end_layout
 
 \begin_layout Section
-Settings &premiliaries
+Settings & Premiliaries
 \end_layout
 
 \begin_layout Section
@@ -765,16 +765,18 @@ Deterministic mechanisms
 Trivial approch
 \end_layout
 
-\begin_layout Subsection
-Non-anonymous mechanism
+\begin_layout Standard
+The most trivial strategy proof mechanism will be one that chooses a fixed
+ point on the circle without consideration of the players' locations.
+ The mechanism is strategy proof, but might be infinitly far from the optimum.
 \end_layout
 
 \begin_layout Subsection
-Upper bound for two players
+Approximation upper bound
 \end_layout
 
 \begin_layout Standard
-As we are working on a maximization problem ̧ a lower bound 
+As we are working on a maximization problem ̧ an upper bound 
 \begin_inset Formula $m$
 \end_inset
 
@@ -802,13 +804,12 @@ begin{theorem}
 
 \end_inset
 
- In the settings of two players and using the minimal distance as a social
- welfare function ̧ there is no deterministic 
+ There is no deterministic 
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
- strategy proof algorithm with 
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+ strategy proof mechanism with 
+\begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
 \end_inset
 
 .
@@ -840,6 +841,7 @@ begin{proof}
 
 \end_inset
 
+ We will start with the proof for 2 players.
  Lets fix player-1 at some point on the circle ̧ and let player-2 be on
  the circle such that the distance between them is 
 \begin_inset Formula $d=\frac{3-\sqrt{2}}{7}$
@@ -976,7 +978,7 @@ emph{truth scenerio}
 
 .
  If
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
 \end_inset
 
  it holds that 
@@ -1029,7 +1031,7 @@ emph{lie scenerio}
 
 .
  If
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
 \end_inset
 
  it holds that 
@@ -1159,7 +1161,7 @@ emph{lie scenerio}
  the false location and the optimal antenna location - the maxmial distance
  of the antenna from the optimal location).
  If 
-\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
 \end_inset
 
  then 
@@ -1168,6 +1170,8 @@ emph{lie scenerio}
 
  which means player-2 is motivated to lie and the algorithem is not strategy
  proof.
+ If we have more than 2 players, the same proof holds when any other player
+ is located at player-1's location.
  
 \begin_inset ERT
 status open
@@ -1197,8 +1201,8 @@ textbf{Question}
 
 \end_inset
 
- Is there a deterministic anonymous algorithm that achieves an approximation
- of constant factor? or can we prove one does not exist?
+ Is there a deterministic algorithm that achieves an approximation of constant
+ factor? or can we prove one does not exist?
 \end_layout
 
 \begin_layout Section
@@ -1206,11 +1210,81 @@ Randomized mechanisms
 \end_layout
 
 \begin_layout Subsection
-Coin flipping/best for one player
+Coin flipping mechanism
+\end_layout
+
+\begin_layout Standard
+As mentioned before, the optimal location for the facility is at the middle
+ of the longest arc.
+ To make this mechanism strategy proof we add the following adjustment:
+ flip a fair coin and choose a random arc (either the long arc or the short
+ one), then locate the facility at the middle of this arc.
+ The mechanism chooses the optimal solution in probability 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+, and therefore is at leaset 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ appromixation.
+ In the case where both of the people are located at the same spot, at probabili
+ty 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ the facility would be located on their exact location and therefore we
+ get a social welfare of 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ That's why the appromixation ratio exactly
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.
+ Notice that this mechanism also strategy proof for 
+\begin_inset Formula $n$
+\end_inset
+
+ players when we uniformly choose a middle of a random arc, and achives
+ an approximation factor of 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+.
+ We won't prove that the mechanism is strategy proof in this paper as we
+ provide a better appromixation algorithm and prove it to be strategy proof.
 \end_layout
 
 \begin_layout Subsection
 Weights mechanism
+\end_layout
+
+\begin_layout Standard
+This mechanism is similar to the coin flipping mechanism mentioned before,
+ but the arcs aren't chosed uniformely.
+ Instead, the probability to choose an arc depends on it's length.
+ An arc of length 
+\begin_inset Formula $d$
+\end_inset
+
+ would be chosen at probability
+\begin_inset Formula $d$
+\end_inset
+
+, and then the facility would be located at it's middle point.
+ We need to prove it's strategy proof and analyze the appromixation factor.
+ We will show that it is strategy proof for 
+\begin_inset Formula $n$
+\end_inset
+
+ player, and achives an approximation of 
+\begin_inset Formula $2(\sqrt{2}-1)$
+\end_inset
+
+ for two players.
 \end_layout
 
 \begin_layout Subsection
@@ -1803,62 +1877,8 @@ Locate the facility at a random place on the circle.
 Coin flipping middle arc
 \end_layout
 
-\begin_layout Standard
-As mentioned before, the optimal solution is choosing the longest arc between
- the players and locating the facility at its middle.
- To make this mechanism truthful we add the following adjustment: flip a
- coin and choose an arc between the players randomly (either the long arc
- or the short one), then locate the facility in that arc's middle point.
- The mechanism chooses the optimal solution at probability 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
-, and therefore is at leaset 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
- appromixation.
- In the case where both of the people are located at the same spot, at probabili
-ty 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
- the facility would be located on their exact location and therefore we
- get a social welfare of 
-\begin_inset Formula $0$
-\end_inset
-
-.
- That's why the appromixation ratio of 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
- is tight.
- The mechanism is anonymous and truthfull.
- We won't prove it's truthfullness in this paper as we provide a better
- appromixation algorithm and prove it to be thruthfull.
-\end_layout
-
 \begin_layout Subparagraph
 Distributed arcs middle point
-\end_layout
-
-\begin_layout Standard
-This algorithm is similar to the coin flipping middle arc mentioned before,
- but the arcs aren't chosed uniformely.
- instead, the probability to choose an arc depends on it's length.
- An arc of length 
-\begin_inset Formula $d$
-\end_inset
-
- would be chosen at probability 
-\begin_inset Formula $\frac{1}{d}$
-\end_inset
-
-, and then the facility would be located at it's middle point.
- The algorithm is clearly anonymous, we need to prove it's SP and analyze
- the appromixation ratio.
- The proof for SP will be provided at the appendix.
 \end_layout
 
 \begin_layout Section
