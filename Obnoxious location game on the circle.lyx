@@ -872,12 +872,12 @@ Trivial approach
 Locate the facility at a random place on the circle.
  The mechanism is truthfull and anonymous.
  For each player the expected distance between him and the facility is 
-\begin_inset Formula $\frac{1}{4}$
+\begin_inset Formula $\frac{1}{2}$
 \end_inset
 
 .
  Therefore the expected social welfare is 
-\begin_inset Formula $\frac{n}{4}$
+\begin_inset Formula $\frac{n}{2}$
 \end_inset
 
 .
@@ -894,6 +894,421 @@ As mentioned before, the optimal solution is choosing the longest arc between
  a coin and choose an arc between the players randomly (either the long
  arc or the short one), then locate the facility in that arc's middle point.
  
+\end_layout
+
+\begin_layout Section
+Upperbound for deterministic mechnisms
+\end_layout
+
+\begin_layout Standard
+As we are working on a maximization problem ̧ a lower bound 
+\begin_inset Formula $m$
+\end_inset
+
+ means that there is no 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithm with 
+\begin_inset Formula $m\lneq\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{theorem}
+\end_layout
+
+\end_inset
+
+ In the settings of two players and using the minimal distance as a social
+ welfare function ̧ there is no deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ strategy proof algorithm with 
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{theorem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+ Lets fix player number 1 at some point on the circle ̧ and let player 2
+ be on the circle such that the distance between them is 
+\begin_inset Formula $d=\frac{3-\sqrt{2}}{7}$
+\end_inset
+
+.
+ We will prove that player 2 can increase his utility by telling the mechnism
+ that he is located at a distance of 
+\begin_inset Formula $2d$
+\end_inset
+
+ to the same direction from player 1, therfore player 2 is motivited to
+ lie.
+ we will call the scenerio in which both players tell the truth 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ and the scenerio where player 1 tells the truth and player 2 lies that
+ he is in distance of 
+\begin_inset Formula $2d$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lemma}
+\end_layout
+
+\end_inset
+
+ In this instance of the problem, wheter player 2 lies or not ̧ any detrministic
+ 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ mechanism must place the antenna on the long arc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lemma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof-of-lemma}
+\end_layout
+
+\end_inset
+
+2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Case1:}
+\end_layout
+
+\end_inset
+
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+, optimal solution will be of course to put the antenna at the middle of
+ the long arc ̧ therefore it will have a social welfare of 
+\begin_inset Formula $\frac{1-d}{2}=\frac{4+\sqrt{2}}{14}$
+\end_inset
+
+.
+ Notice that the optimal location on the short arc is at the middle of it,
+ with a social welfare of 
+\begin_inset Formula $\frac{d}{2}$
+\end_inset
+
+.
+ If
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+ it holds that 
+\begin_inset Formula $\alpha\frac{1-d}{2}\gneq\frac{d}{2}$
+\end_inset
+
+.
+ It follows that any deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithem must place the antenna on the long arc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Case2:}
+\end_layout
+
+\end_inset
+
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, the optimal location for the antenna will again be on the middle of the
+ long arc and have a social welfare of 
+\begin_inset Formula $\frac{1-2d}{2}=\frac{1+2\sqrt{2}}{14}$
+\end_inset
+
+.
+ The optimal social welfare on the short arc is 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ If
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+ it holds that 
+\begin_inset Formula $\alpha\frac{1-2d}{2}\gneq d$
+\end_inset
+
+ .
+ Again, it follows that any deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithem must place the antenna on the long arc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof-of-lemma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will now make some calculations and see that the upper bound on the utility
+ of player 2 in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ is lower than the lower bound on his utility in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, therfore he is motivated to lie.
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{truth scenerio}
+\end_layout
+
+\end_inset
+
+ any deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithem must place the antenna on the long arc, and not farther than
+ 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ from it's middle because the optimal location is the middle and 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ is the difference between the optimal social welfare and the minimal social
+ welfare.
+ The best location player 2 can hope for is the one closest to it's oposite
+ location, that is the point at distance 
+\begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
+\end_inset
+
+ from the middle of the long arc which is closest to the opposite location
+ of player 2.
+ This means that the utility of player 2 is at most 
+\begin_inset Formula $(1-\frac{\alpha}{2})(1-d)$
+\end_inset
+
+.
+ Now for the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{lie scenerio}
+\end_layout
+
+\end_inset
+
+, any deterministic 
+\begin_inset Formula $\alpha-\text{optimization}$
+\end_inset
+
+ algorithem must place the antenna on the long arc, and not farther than
+ 
+\begin_inset Formula $\frac{(1-\alpha)(1-2d)}{2}$
+\end_inset
+
+ from it's middle.
+ Notice that the segment of possible locations for the antenna is between
+ the opposite location of player 2 and it's false location.
+ Therfore the utility of player 2 is at least 
+\begin_inset Formula $d+\frac{1-2d}{2}-\frac{(1-\alpha)(1-2d)}{2}=\frac{\alpha}{2}-\alpha d+d$
+\end_inset
+
+ (the distance between player 2 and his false location + the distance between
+ the false location and the optimal antenna location - the maxmial distance
+ of the antenna from the optimal location).
+ If
+\begin_inset Formula $\alpha\gneq2\sqrt{2}-2$
+\end_inset
+
+ then 
+\begin_inset Formula $\frac{\alpha}{2}-\alpha d+d>(1-\frac{\alpha}{2})(1-d)$
+\end_inset
+
+ which means player 2 is motivated to lie and the algorithem is not strategy
+ proof.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
