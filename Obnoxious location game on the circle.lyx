@@ -801,12 +801,12 @@ Settings & Preliminaries
 
 \begin_layout Standard
 The entire paper will focus on mechanisms that are choosing where to locate
- a singel facility, given the locations(may be misreported) of 
+ a singel facility given the locations (may be misreported) of 
 \begin_inset Formula $n$
 \end_inset
 
  players.
- All of the locations are on the a circle with circumference 1.
+ All of the locations are on a circle with circumference 1.
 \end_layout
 
 \begin_layout Standard
@@ -1430,7 +1430,7 @@ This mechanism is similar to the coin flipping mechanism mentioned before,
 \begin_inset Formula $d$
 \end_inset
 
- would be chosen at probability
+ would be chosen at probability 
 \begin_inset Formula $d$
 \end_inset
 
@@ -1449,6 +1449,142 @@ This mechanism is similar to the coin flipping mechanism mentioned before,
 
 \begin_layout Subsection
 Weights mechanism approximation factor
+\end_layout
+
+\begin_layout Standard
+We'll focus on a scenerio where the algorithm is far from optimal.
+ It would give an upper bound on the algorithm performence for 
+\begin_inset Formula $n$
+\end_inset
+
+ players, and it would be tight for 2 players.
+ Consider the following case:
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $d$
+\end_inset
+
+ be the length of the longest arc on the circle, and 
+\begin_inset Formula $p_{0},p_{1}$
+\end_inset
+
+ be the players creating the arc.
+ We spread the rest of the 
+\begin_inset Formula $n-2$
+\end_inset
+
+ players uniformly on the complementary arc (which iis 
+\begin_inset Formula $1-d$
+\end_inset
+
+ long).
+ Lets analyze the social welfare of the algorithm's output:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+SW=d\cdot\frac{d}{2}+(1-d)\cdot\frac{1-d}{2(n-1)}=\frac{nd^{2}-2d+1}{2(n-1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The optimal solution would be locating the facility on the middle of 
+\begin_inset Formula $(p_{0},p_{1})$
+\end_inset
+
+, and then the SW is 
+\begin_inset Formula $\frac{d}{2}$
+\end_inset
+
+.
+ Lets calculate the ratio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{ratio}(d)=\frac{\frac{d}{2}}{\frac{nd^{2}-2d+1}{2(n-1)}}=\frac{d(n-1)}{nd^{2}-2d+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to find a maximum to this function (a big ratio means the algorithm
+ is bad).
+ Lets find the derivative:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f'_{ratio}(d)=\frac{(n-1)(nd^{2}-2d+1)-d(n-1)(2nd-2)}{(nd^{2}-2d+1)^{2}}=\frac{(n-1)(1-nd^{2})}{(n-1)d^{2}+(d-1)^{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice the denominator is always bigger than 0.
+ therefore we got 
+\begin_inset Formula $d=\frac{1}{\sqrt[]{n}}$
+\end_inset
+
+.
+ Finding the ratio in this case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{ratio}(\frac{1}{\sqrt[]{n}})=\frac{1+\sqrt[]{n}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is an upper bound on the algorithm.
+ Notice for example that when 
+\begin_inset Formula $n=9$
+\end_inset
+
+, we got an upperbound of 
+\begin_inset Formula $2-appromixation$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $n=2$
+\end_inset
+
+, we found the worst possible scenerio for the algorithm (because there
+ are no more players to locate) and therefore got a tight appromixation
+ bound of 
+\begin_inset Formula $\frac{1+\sqrt{2}}{2}\sim1.207$
+\end_inset
+
+.
+ A question rises - whether this bound is tight for 
+\begin_inset Formula $n$
+\end_inset
+
+ players also or can you locate the players differently to make the algorithm
+ behave even worse.
+ We won't discuss this question any further in this article.
 \end_layout
 
 \begin_layout Subsection
@@ -1913,9 +2049,9 @@ We considered the mechanisms that solve the problem of obnoxious facility
 \end_inset
 
  on the approximation factor of deterministic mechanisms.
- The question wheter there is a deterministic mechanisms that ahives a constant
- approximation factor remains unanswered, we belive that there is no such
- mechanism.
+ The question wheter there is a deterministic mechanisms that achives a
+ constant approximation factor remains unanswered, we belive that there
+ is no such mechanism.
  Later, we presented a strategy-proof random mechanism and proved that it
  is a 
 \begin_inset Formula $2(\sqrt{2}-1)-approximation$
