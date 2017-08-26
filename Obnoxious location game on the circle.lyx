@@ -676,7 +676,7 @@ In a facility location game there are number of players located at different
  locations and a number of facilities needed to be located.
  Each player has a utility function based on his location and the facilities
  locations.
- A mechanism recieves the players locations and decides the facilities locations
+ A mechanism receives the players locations and decides the facilities locations
  while trying to maximize the social welfare: the sum of the players utilities.
  The players can lie about their location in order to increase their utility.
  A mechanism is called 
@@ -723,10 +723,10 @@ While maximizing the sum of players’ utilities, if the players can be demanded
  and Tennenholts in facility location game on a real line.
  In facility location game, each agent wants to stay as close to the facility
  as possible, which means that the agents’ preferences are single peaked.
- They charactrised deterministic and randomized stategy-proof algorithms
+ They characterized deterministic and randomized strategy-proof algorithms
  for the problem of one facility on the line, and showed an upper bound
- on deteministic algorithms of 2-appromixation.
- In obnoxious facility location game, playes prefer to be away from the
+ on deterministic algorithms of 2-appromixation.
+ In obnoxious facility location game, players prefer to be away from the
  facility (such as a garbage dump).
  The obnoxious facility location game with maximizing social cost objective
  function was first investigated by Cheng et al.
@@ -736,7 +736,7 @@ While maximizing the sum of players’ utilities, if the players can be demanded
 \end_inset
 
 -approximation mechanism on a line.
- On a circle or a tree, they proposed a deterministic group strategyproof
+ On a circle or a tree, they proposed a deterministic group strategy-proof
  3-approximation mechanisms.
  Later, Ibara et al.
  proved that, in the line metric there does not exist strategy-proof mechanism
@@ -801,7 +801,7 @@ Settings & Preliminaries
 
 \begin_layout Standard
 The entire paper will focus on mechanisms that are choosing where to locate
- a singel facility given the locations (may be misreported) of 
+ a single facility given the locations (may be misreported) of 
 \begin_inset Formula $n$
 \end_inset
 
@@ -902,7 +902,7 @@ emph{opposite location}
 
  of a player to describe the location on the circle that is farthest from
  the player.
- A mechanism that garentees a social welfare that is at least 
+ A mechanism that guarantees a social welfare that is at least 
 \begin_inset Formula $\alpha\cdot\text{OPT}$
 \end_inset
 
@@ -922,13 +922,13 @@ Deterministic mechanisms
 \end_layout
 
 \begin_layout Subsection
-Trivial approch
+Trivial approach
 \end_layout
 
 \begin_layout Standard
 The most trivial strategy proof mechanism will be one that chooses a fixed
  point on the circle without consideration of the players' locations.
- The mechanism is strategy proof, but might be infinitly far from the optimum.
+ The mechanism is strategy proof, but might be infinitely far from the optimum.
 \end_layout
 
 \begin_layout Subsection
@@ -1013,9 +1013,9 @@ begin{proof}
 \begin_inset Formula $2d$
 \end_inset
 
- to the same direction from player-1, therfore player-2 is motivited to
+ to the same direction from player-1, therefore player-2 is motivated to
  lie.
- we will call the scenerio in which both players tell the truth 
+ we will call the scenario in which both players tell the truth 
 \begin_inset ERT
 status open
 
@@ -1023,12 +1023,12 @@ status open
 
 
 \backslash
-emph{truth scenerio}
+emph{truth scenario}
 \end_layout
 
 \end_inset
 
- and the scenerio where player-1 tells the truth and player-2 lies that
+ and the scenario where player-1 tells the truth and player-2 lies that
  he is in distance of 
 \begin_inset Formula $2d$
 \end_inset
@@ -1041,7 +1041,7 @@ status open
 
 
 \backslash
-emph{lie scenerio}
+emph{lie scenario}
 \end_layout
 
 \end_inset
@@ -1062,8 +1062,8 @@ begin{lemma}
 
 \end_inset
 
- In this instance of the problem, whether player-2 lies or not ̧ any detrministi
-c 
+ In this instance of the problem, whether player-2 lies or not ̧ any determinist
+ic 
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
@@ -1120,7 +1120,7 @@ status open
 
 
 \backslash
-emph{truth scenerio}
+emph{truth scenario}
 \end_layout
 
 \end_inset
@@ -1150,7 +1150,7 @@ emph{truth scenerio}
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
- algorithem must place the antenna on the long arc.
+ algorithm must place the antenna on the long arc.
 \end_layout
 
 \begin_layout Standard
@@ -1174,7 +1174,7 @@ status open
 
 
 \backslash
-emph{lie scenerio}
+emph{lie scenario}
 \end_layout
 
 \end_inset
@@ -1203,7 +1203,7 @@ emph{lie scenerio}
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
- algorithem must place the antenna on the long arc.
+ algorithm must place the antenna on the long arc.
 \begin_inset ERT
 status open
 
@@ -1229,7 +1229,7 @@ status open
 
 
 \backslash
-emph{truth scenerio}
+emph{truth scenario}
 \end_layout
 
 \end_inset
@@ -1242,12 +1242,12 @@ status open
 
 
 \backslash
-emph{lie scenerio}
+emph{lie scenario}
 \end_layout
 
 \end_inset
 
-, therfore he is motivated to lie.
+, therefore he is motivated to lie.
  In the 
 \begin_inset ERT
 status open
@@ -1256,7 +1256,7 @@ status open
 
 
 \backslash
-emph{truth scenerio}
+emph{truth scenario}
 \end_layout
 
 \end_inset
@@ -1265,7 +1265,7 @@ emph{truth scenerio}
 \begin_inset Formula $\alpha-\text{appromixation}$
 \end_inset
 
- algorithem must place the antenna on the long arc, and not farther than
+ algorithm must place the antenna on the long arc, and not farther than
  
 \begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
 \end_inset
@@ -1276,7 +1276,7 @@ emph{truth scenerio}
 
  is the difference between the optimal social welfare and the minimal social
  welfare.
- The best location player-2 can hope for is the one closest to it's oposite
+ The best location player-2 can hope for is the one closest to it's opposite
  location, that is the point at distance 
 \begin_inset Formula $\frac{(1-\alpha)(1-d)}{2}$
 \end_inset
@@ -1296,7 +1296,7 @@ status open
 
 
 \backslash
-emph{lie scenerio}
+emph{lie scenario}
 \end_layout
 
 \end_inset
@@ -1305,7 +1305,7 @@ emph{lie scenerio}
 \begin_inset Formula $\alpha-\text{optimization}$
 \end_inset
 
- algorithem must place the antenna on the long arc, and not farther than
+ algorithm must place the antenna on the long arc, and not farther than
  
 \begin_inset Formula $\frac{(1-\alpha)(1-2d)}{2}$
 \end_inset
@@ -1313,12 +1313,12 @@ emph{lie scenerio}
  from it's middle.
  Notice that the segment of possible locations for the antenna is between
  the opposite location of player-2 and it's false location.
- Therfore the utility of player-2 is at least 
+ Therefore the utility of player-2 is at least 
 \begin_inset Formula $d+\frac{1-2d}{2}-\frac{(1-\alpha)(1-2d)}{2}=\frac{\alpha}{2}-\alpha d+d$
 \end_inset
 
  (the distance between player-2 and his false location + the distance between
- the false location and the optimal antenna location - the maxmial distance
+ the false location and the optimal antenna location - the maximal distance
  of the antenna from the optimal location).
  If 
 \begin_inset Formula $\alpha\gneq2(\sqrt{2}-1)$
@@ -1328,7 +1328,7 @@ emph{lie scenerio}
 \begin_inset Formula $\frac{\alpha}{2}-\alpha d+d>(1-\frac{\alpha}{2})(1-d)$
 \end_inset
 
- which means player-2 is motivated to lie and the algorithem is not strategy
+ which means player-2 is motivated to lie and the algorithm is not strategy
  proof.
  If we have more than 2 players, the same proof holds when any other player
  is located at player-1's location.
@@ -1383,11 +1383,11 @@ As mentioned before, the optimal location for the facility is at the middle
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
 
-, and therefore is at leaset 
+, and therefore is at least 
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
 
- appromixation.
+ approximation.
  In the case where both of the people are located at the same spot, at probabili
 ty 
 \begin_inset Formula $\frac{1}{2}$
@@ -1399,7 +1399,7 @@ ty
 \end_inset
 
 .
- That's why the appromixation ratio exactly
+ That's why the approximation ratio exactly
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
 
@@ -1408,14 +1408,14 @@ ty
 \begin_inset Formula $n$
 \end_inset
 
- players when we uniformly choose a middle of a random arc, and achives
+ players when we uniformly choose a middle of a random arc, and achieves
  an approximation factor of 
 \begin_inset Formula $\frac{1}{n}$
 \end_inset
 
 .
  We won't prove that the mechanism is strategy proof in this paper as we
- provide a better appromixation algorithm and prove it to be strategy proof.
+ provide a better approximation algorithm and prove it to be strategy proof.
 \end_layout
 
 \begin_layout Subsection
@@ -1424,7 +1424,7 @@ Weights mechanism
 
 \begin_layout Standard
 This mechanism is similar to the coin flipping mechanism mentioned before,
- but the arcs aren't chosed uniformely.
+ but the arcs aren't chosen uniformly.
  Instead, the probability to choose an arc depends on it's length.
  An arc of length 
 \begin_inset Formula $d$
@@ -1435,12 +1435,12 @@ This mechanism is similar to the coin flipping mechanism mentioned before,
 \end_inset
 
 , and then the facility would be located at it's middle point.
- We need to prove it's strategy proof and analyze the appromixation factor.
+ We need to prove it's strategy proof and analyze the approximation factor.
  We will show that it is strategy proof for 
 \begin_inset Formula $n$
 \end_inset
 
- player, and achives an approximation of 
+ player, and achieves an approximation of 
 \begin_inset Formula $2(\sqrt{2}-1)$
 \end_inset
 
@@ -1452,8 +1452,8 @@ Weights mechanism approximation factor
 \end_layout
 
 \begin_layout Standard
-We'll focus on a scenerio where the algorithm is far from optimal.
- It would give an upper bound on the algorithm performence for 
+We'll focus on a scenario where the algorithm is far from optimal.
+ It would give an upper bound on the algorithm performance for 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1475,7 +1475,7 @@ Let
 \begin_inset Formula $n-2$
 \end_inset
 
- players uniformly on the complementary arc (which iis 
+ players uniformly on the complementary arc (which is 
 \begin_inset Formula $1-d$
 \end_inset
 
@@ -1562,7 +1562,7 @@ This is an upper bound on the algorithm.
 \begin_inset Formula $n=9$
 \end_inset
 
-, we got an upperbound of 
+, we got an upper bound of 
 \begin_inset Formula $2-appromixation$
 \end_inset
 
@@ -1571,8 +1571,8 @@ This is an upper bound on the algorithm.
 \begin_inset Formula $n=2$
 \end_inset
 
-, we found the worst possible scenerio for the algorithm (because there
- are no more players to locate) and therefore got a tight appromixation
+, we found the worst possible scenario for the algorithm (because there
+ are no more players to locate) and therefore got a tight approximation
  bound of 
 \begin_inset Formula $\frac{1+\sqrt{2}}{2}\sim1.207$
 \end_inset
@@ -1588,7 +1588,7 @@ This is an upper bound on the algorithm.
 \end_layout
 
 \begin_layout Subsection
-Weights mechanism is startegy proof
+Weights mechanism is strategy proof
 \end_layout
 
 \begin_layout Standard
@@ -1598,7 +1598,7 @@ We now provide a proof that the algorithm is SP.
 \begin_inset Formula $p_{0}$
 \end_inset
 
- be the player location (located at the bottom of the circle for convinience),
+ be the player location (located at the bottom of the circle for convenience),
  
 \begin_inset Formula $q_{0}$
 \end_inset
@@ -1611,7 +1611,7 @@ We now provide a proof that the algorithm is SP.
 \begin_inset Formula $\hat{p_{0}}$
 \end_inset
 
- is the player's mireported location.
+ is the player's misreported location.
  Let 
 \begin_inset Formula $p_{1},p_{2}$
 \end_inset
@@ -2044,13 +2044,13 @@ Summary
 \begin_layout Standard
 We considered the mechanisms that solve the problem of obnoxious facility
  location games on the circle without using money.
- We have showen an upper bound of 
+ We have shown an upper bound of 
 \begin_inset Formula $2(\sqrt{2}-1)$
 \end_inset
 
  on the approximation factor of deterministic mechanisms.
- The question wheter there is a deterministic mechanisms that achives a
- constant approximation factor remains unanswered, we belive that there
+ The question whether there is a deterministic mechanisms that achieves
+ a constant approximation factor remains unanswered, we believe that there
  is no such mechanism.
  Later, we presented a strategy-proof random mechanism and proved that it
  is a 
@@ -2111,7 +2111,7 @@ Assume W.L.G
 \end_inset
 
 .
- We'll split the proof for this case into two subcases: 
+ We'll split the proof for this case into two sub cases: 
 \begin_inset Formula $d_{1}\le2\cdot d_{3}$
 \end_inset
 
@@ -2262,7 +2262,7 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(\frac{1}{2}-(\frac{d_{1}}{2}-d_{3}))+(1-\frac{d_{
 \end_layout
 
 \begin_layout Standard
-This is a linear equasion in 
+This is a linear equation in 
 \begin_inset Formula $d_{1}$
 \end_inset
 
@@ -2325,7 +2325,7 @@ We change notations and now
 \end_inset
 
 .
- We need to seperate the calculation into two cases: 
+ We need to separate the calculation into two cases: 
 \begin_inset Formula $d_{1}\leq2d_{3}-d_{2}$
 \end_inset
 
@@ -2460,7 +2460,7 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cd
 \end_layout
 
 \begin_layout Standard
-The equasion is 
+The equation is 
 \begin_inset Formula $\cap$
 \end_inset
 
@@ -2550,7 +2550,7 @@ One can see that either
 \begin_inset Formula $p_{2}\le\frac{1}{2}$
 \end_inset
 
-, because the whole circle perimiter is 
+, because the whole circle perimeter is 
 \begin_inset Formula $1$
 \end_inset
 
@@ -2617,7 +2617,7 @@ We split the proof of this case into three sub cases:
 \begin_inset Formula $d_{1}\le2(d_{3}-\frac{1}{2})$
 \end_inset
 
-: The player's utility when the chosed arc is 
+: The player's utility when the chosen arc is 
 \begin_inset Formula $(p_{1},p_{2})$
 \end_inset
 
@@ -2756,7 +2756,7 @@ The utility doesn't depend on
 \begin_inset Formula $d_{1}>2d_{3}-d_{2}$
 \end_inset
 
-: The player's utility when the chosed arc is 
+: The player's utility when the chosen arc is 
 \begin_inset Formula $(p_{1},p_{2})$
 \end_inset
 
@@ -2775,7 +2775,7 @@ u_{0}=\frac{d_{1}}{d_{2}}\cdot(d_{3}-\frac{d_{1}}{2})+(1-\frac{d_{1}}{d_{2}})\cd
 \end_layout
 
 \begin_layout Standard
-The equasion is 
+The equation is 
 \begin_inset Formula $\cap$
 \end_inset
 
