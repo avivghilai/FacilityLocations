@@ -677,9 +677,9 @@ In a facility location game there are number of players located at different
  Each player has a utility function based on his location and the facilities
  locations.
  A mechanism recieves the players locations and decides the facilities locations
- while trying to maximize the social cost: the sum of the players utilities.
+ while trying to maximize the social welfare: the sum of the players utilities.
  The players can lie about their location in order to increase their utility.
- An algorithm is called 
+ A mechanism is called 
 \begin_inset ERT
 status open
 
@@ -796,7 +796,125 @@ We investigated the deterministic and randomized mechanisms in obnoxious
 \end_layout
 
 \begin_layout Section
-Settings & Premiliaries
+Settings & Preliminaries
+\end_layout
+
+\begin_layout Standard
+The entire paper will focus on mechanisms that are choosing where to locate
+ a singel facility, given the locations(may be misreported) of 
+\begin_inset Formula $n$
+\end_inset
+
+ players.
+ All of the locations are on the a circle with circumference 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}[The circle]
+\end_layout
+
+\end_inset
+
+ A circle with circumference 1.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definition}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}[Distance between two points]
+\end_layout
+
+\end_inset
+
+ When we consider two points on the circle, they split the circle to two
+ arcs.
+ The distance between two points is defined to be the length of the shorter
+ arc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definition}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The utility of each player is the distance between the player and the facility.
+ The function any mechanism tries to maximize is minimum of all players'
+ utilities, and we will call it the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{social welfare}
+\end_layout
+
+\end_inset
+
+.
+ We will use the term 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+emph{opposite location}
+\end_layout
+
+\end_inset
+
+ of a player to describe the location on the circle that is farthest from
+ the player.
+ A mechanism that garentees a social welfare that is at least 
+\begin_inset Formula $\alpha\cdot\text{OPT}$
+\end_inset
+
+ for some constant 
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+ will be called a 
+\begin_inset Formula $\alpha-\text{appromixation}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -818,7 +936,7 @@ Approximation upper bound
 \end_layout
 
 \begin_layout Standard
-As we are working on a maximization problem ̧ an upper bound 
+As we are working on a maximization problem, an upper bound 
 \begin_inset Formula $m$
 \end_inset
 
@@ -1787,142 +1905,26 @@ end{proof}
 Summary
 \end_layout
 
-\begin_layout Section
-Two players and one facility
-\end_layout
-
 \begin_layout Standard
-Two players are located on a circle.
- we wish to design an algorithms that based on their said locations, decides
- the location of a single facility such that it's distance from the players
- is maximal.
- Let 
-\begin_inset Formula $p_{1}$
+We considered the mechanisms that solve the problem of obnoxious facility
+ location games on the circle without using money.
+ We have showen an upper bound of 
+\begin_inset Formula $2(\sqrt{2}-1)$
 \end_inset
 
-, 
-\begin_inset Formula $p_{2}$
+ on the approximation factor of deterministic mechanisms.
+ The question wheter there is a deterministic mechanisms that ahives a constant
+ approximation factor remains unanswered, we belive that there is no such
+ mechanism.
+ Later, we presented a strategy-proof random mechanism and proved that it
+ is a 
+\begin_inset Formula $2(\sqrt{2}-1)-approximation$
 \end_inset
 
- be the players locations and 
-\begin_inset Formula $d=dist(p1,p2)$
-\end_inset
-
-.
- 
-\begin_inset Formula $dist$
-\end_inset
-
- is defined by the shortest path between 
-\begin_inset Formula $p1$
-\end_inset
-
- and 
-\begin_inset Formula $p2$
-\end_inset
-
- on the circle perimiter.
- Let 
-\begin_inset Formula $f$
-\end_inset
-
- be the facility location.
- The 
-\emph on
-social welfare
-\emph default
- is defined as 
-\begin_inset Formula $dist(p1,d)+dist(p2,d)$
-\end_inset
-
-.
- Define the circle perimiter length as 1 for convinience, notice every solution
- value is at most 1.
- The optimal solution for the problem is choosing the longest arc between
- the players and locating the facility at the middle of it.
- This mechanism is not truthful because one player can lie about his location
- and say his closed to the middle point, pushing it away from him.
- We look for appromixation algorithms which are thruthfull and still as
- close as possible to the optimum.
-\end_layout
-
-\begin_layout Subsection
-Deterministic mechanism
-\end_layout
-
-\begin_layout Subparagraph
-Trivial approach
-\end_layout
-
-\begin_layout Standard
-choose a fixed point on the circle without consideration of the players'
- locations.
- The mechanism is both truthful and anonymous, but might be infinitly far
- from the optimum.
-\end_layout
-
-\begin_layout Subparagraph
-Best for one player
-\end_layout
-
-\begin_layout Standard
-Locate the facility at the farest place from player number 1.
- The mechanism is truthful but not anonymous.
- Each solution value is at least 
-\begin_inset Formula $0.5$
-\end_inset
-
-, and therefore we get an appromixation of 
-\begin_inset Formula $\frac{1}{n}$
-\end_inset
-
- where 
-\begin_inset Formula $n$
-\end_inset
-
- is the number of players (in our case 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
- appromixation).
-\end_layout
-
-\begin_layout Subparagraph
-
-\emph on
-Do we have a deterministic anonymous algorithm that achieves an appromixation
- of constant factor? or can we prove one doesn't exists?
-\end_layout
-
-\begin_layout Subsection
-Randomized mechanisms
-\end_layout
-
-\begin_layout Subparagraph
-Trivial approach
-\end_layout
-
-\begin_layout Standard
-Locate the facility at a random place on the circle.
- The mechanism is truthful and anonymous.
- For each player the expected distance between him and the facility is 
-\begin_inset Formula $\frac{1}{2}$
-\end_inset
-
-.
- Therefore the expected social welfare is 
-\begin_inset Formula $\frac{n}{2}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subparagraph
-Coin flipping middle arc
-\end_layout
-
-\begin_layout Subparagraph
-Distributed arcs middle point
+ when there are only 2 players.
+ Another question is what upper bound applies to random mechanisms? We think
+ that the proof of the upper bound for deterministic mechanisms can be adjusted
+ to random mechanisms as well.
 \end_layout
 
 \begin_layout Section
