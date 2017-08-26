@@ -168,7 +168,7 @@ textheight}{8.5in}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\handout}[5]{ \newcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
+\newcommand{\handout}[5]{ \renewcommand{\thepage}{#1-\arabic{page}}\noindent\begin{center} \framebox[][]{ \vbox{ \hbox to 5.78in { {\bf Algorithmic Game Theory} \hfill#2 } \vspace{4mm} \hbox to 5.78in { {\Large\hfill#5 \hfill} } \vspace{2mm} \hbox to 5.78in { {\it #3 \hfill#4} } } } \end{center} \vspace*{4mm} }
 \end_inset
 
 
@@ -658,12 +658,9 @@ In this paper, we investigate the obnoxious facility location game on the
 \uwave default
 \noun default
 \color inherit
- on strategy-proof deterministic mechanisms for 2 players.
- then, we design a strategy-proof randomized mechanism for 
-\begin_inset Formula $n$
-\end_inset
-
- players, and discuss its properties.
+ on strategy-proof deterministic mechanisms.
+ Then, we design a strategy-proof randomized mechanism, and discuss its
+ properties.
  
 \end_layout
 
@@ -1096,7 +1093,7 @@ begin{proof-of-lemma}
 
 \end_inset
 
-2 
+4 
 \end_layout
 
 \begin_layout Standard
@@ -1510,7 +1507,7 @@ The optimal solution would be locating the facility on the middle of
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f_{ratio}(d)=\frac{\frac{d}{2}}{\frac{nd^{2}-2d+1}{2(n-1)}}=\frac{d(n-1)}{nd^{2}-2d+1}
+f_{ratio}(d)=\frac{\frac{nd^{2}-2d+1}{2(n-1)}}{\frac{d}{2}}=\frac{nd^{2}-2d+1}{d(n-1)}
 \]
 
 \end_inset
@@ -1519,7 +1516,7 @@ f_{ratio}(d)=\frac{\frac{d}{2}}{\frac{nd^{2}-2d+1}{2(n-1)}}=\frac{d(n-1)}{nd^{2}
 \end_layout
 
 \begin_layout Standard
-We want to find a maximum to this function (a big ratio means the algorithm
+We want to find a minimum to this function (a small ratio means the algorithm
  is bad).
  Lets find the derivative:
 \end_layout
@@ -1527,7 +1524,7 @@ We want to find a maximum to this function (a big ratio means the algorithm
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f'_{ratio}(d)=\frac{(n-1)(nd^{2}-2d+1)-d(n-1)(2nd-2)}{(nd^{2}-2d+1)^{2}}=\frac{(n-1)(1-nd^{2})}{(n-1)d^{2}+(d-1)^{2}}=0
+f'_{ratio}(d)=\frac{nd^{2}-1}{(n-1)d^{2}}=0
 \]
 
 \end_inset
@@ -1538,7 +1535,7 @@ f'_{ratio}(d)=\frac{(n-1)(nd^{2}-2d+1)-d(n-1)(2nd-2)}{(nd^{2}-2d+1)^{2}}=\frac{(
 \begin_layout Standard
 Notice the denominator is always bigger than 0.
  therefore we got 
-\begin_inset Formula $d=\frac{1}{\sqrt[]{n}}$
+\begin_inset Formula $d=\frac{1}{\sqrt{n}}$
 \end_inset
 
 .
@@ -1548,7 +1545,7 @@ Notice the denominator is always bigger than 0.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f_{ratio}(\frac{1}{\sqrt[]{n}})=\frac{1+\sqrt[]{n}}{2}
+f_{ratio}(\frac{1}{\sqrt{n}})=2(\sqrt{2}-1)
 \]
 
 \end_inset
@@ -1563,7 +1560,7 @@ This is an upper bound on the algorithm.
 \end_inset
 
 , we got an upper bound of 
-\begin_inset Formula $2-appromixation$
+\begin_inset Formula $\frac{1}{2}-appromixation$
 \end_inset
 
 .
@@ -1574,7 +1571,7 @@ This is an upper bound on the algorithm.
 , we found the worst possible scenario for the algorithm (because there
  are no more players to locate) and therefore got a tight approximation
  bound of 
-\begin_inset Formula $\frac{1+\sqrt{2}}{2}\sim1.207$
+\begin_inset Formula $2(\sqrt{2}-1)\sim0.828$
 \end_inset
 
 .
@@ -2057,10 +2054,13 @@ We considered the mechanisms that solve the problem of obnoxious facility
 \begin_inset Formula $2(\sqrt{2}-1)-approximation$
 \end_inset
 
- when there are only 2 players.
- Another question is what upper bound applies to random mechanisms? We think
- that the proof of the upper bound for deterministic mechanisms can be adjusted
- to random mechanisms as well.
+ when there are only 2 players.We think that the proof of the upper bound
+ for deterministic mechanisms can be adjusted to random mechanisms as well.
+ If so, it will mean that we have found the best possible random SP mechanism
+ for 2 players.
+ Another question is what upper bound applies to random mechanisms with
+ more players? We have showen that our mechanism become worse as the amount
+ of players grows .
 \end_layout
 
 \begin_layout Section
